@@ -4,6 +4,8 @@
 
 📧 matvey_v@yahoo.com · 📱 +7 921 900-86-18 · 💬 [@matveivasetsov](https://t.me/matveivasetsov)
 
+🇬🇧 [English version](README_EN.md)
+
 ---
 
 > *Торговая платформа, расчётная система или AI-агент под ваш процесс: 19 лет в FinTech + Python + LLM-инструменты → MVP, который не нужно переписывать после первого релиза.*
