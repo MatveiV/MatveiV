@@ -24,6 +24,7 @@
 
 ### AI / LLM / Боты
 
+- **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — учебный проект двух Telegram-ботов для демонстрации памяти LLM: `Незнайка` (без памяти) и `Знайка` (краткосрочная + долгосрочная память). Реализованы structured output (`theses` + `message`), хранение тезисов в SQLite, команды `/mytheses`, `/reset`, `/resetall`, запуск через единый PowerShell-скрипт и архитектурные Mermaid-диаграммы (C4/UML).
 - **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — сайт-резюме в стиле Apple (Flask, анимации, адаптивность) + Telegram-бот (aiogram 3) с двуязычным интерфейсом RU/EN, скачиванием PDF-резюме с timestamp, фильтрацией проектов и единой базой projects.json.
 - **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram-бот с 5 AI-провайдерами, 8 ролями, генерацией изображений/видео, памятью диалога и подсчётом стоимости в рублях. Документация: 8 Mermaid-диаграмм (C4, BPMN, UML).
 - **[ShortLongMemory Bots](https://github.com/MatveiV/ShortLongMemory_Bots)** — Telegram-боты с короткой (deque) и долгой (RAG + ChromaDB) памятью. FSM-конфигуратор, 3 AI-провайдера, 16+ моделей.
