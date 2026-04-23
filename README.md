@@ -33,6 +33,7 @@
 - **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — система автогенерации PDF-отчётов по транскрибациям диалогов с клиентами. LLM → структурированный JSON → Jinja2 → WeasyPrint. 5 LLM-провайдеров, 4 бэкенда генерации изображений.
 - **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — автогенерация Telegram-ботов и документации (SRS, URS) по текстовому описанию через LLM-цепочки.
 - **[Prompter](https://github.com/MatveiV/Prompter)** — CLI для A/B-тестирования техник промптинга (zero-shot, few-shot, CoT, role-based) с ранжированием и генерацией Markdown/DOCX-отчётов.
+- **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram-бот с долгосрочной векторной памятью на Pinecone. Каждое сообщение сохраняется как эмбеддинг (text-embedding-3-small, dim=1536); перед каждым ответом выполняется семантический поиск топ-5 воспоминаний через query_vector и они подставляются в системный промпт GPT. Автосохранение по ключевым словам, ручная команда /save, очистка памяти /forget. Модуль PineconeVectorClient инкапсулирует upsert/query/delete. Документация: 6 Mermaid-диаграмм (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram-бот и CLI для сравнения ответов AI-моделей (GPT, Claude, Gemini, DeepSeek, GLM) через единый OpenAI-совместимый клиент.
 
 ### Инфраструктура и бэкенд
@@ -147,7 +148,7 @@
 | Языки | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace |
 | Генерация медиа | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Фреймворки | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pydantic, Jinja2, WeasyPrint |
+| Фреймворки | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint |
 | Данные | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance |
 | ML | scikit-learn, LightGBM, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Инфраструктура | Docker, Docker Compose, Grafana Loki, GitHub Actions |
@@ -196,3 +197,4 @@
 
 - Русский — родной
 - Английский — Upper Intermediate (B2)
+

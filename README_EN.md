@@ -33,6 +33,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — automated PDF report generation from client dialogue transcriptions. Pipeline: LLM → structured JSON → Jinja2 → WeasyPrint. 5 LLM providers, 4 image-generation backends.
 - **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — auto-generation of Telegram bots and documentation (SRS, URS) from a text description via LLM chains.
 - **[Prompter](https://github.com/MatveiV/Prompter)** — CLI for A/B testing of prompting techniques (zero-shot, few-shot, CoT, role-based) with ranking and Markdown/DOCX report generation.
+- **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram bot with long-term vector memory on Pinecone. Every message is stored as an embedding (text-embedding-3-small, dim=1536); before each reply a semantic search retrieves the top-5 relevant memories via query_vector and injects them into the GPT system prompt. Auto-save by keywords, manual /save command, /forget to clear memory. PineconeVectorClient module encapsulates upsert/query/delete. Docs: 6 Mermaid diagrams (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram bot and CLI for comparing AI model responses (GPT, Claude, Gemini, DeepSeek, GLM) via a unified OpenAI-compatible client.
 
 ### Infrastructure & Backend
@@ -153,7 +154,7 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 | Languages | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pydantic, Jinja2, WeasyPrint |
+| Frameworks | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint |
 | Data | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance |
 | ML | scikit-learn, LightGBM, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
@@ -202,3 +203,4 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 
 - Russian — native
 - English — Upper Intermediate (B2)
+
