@@ -24,6 +24,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 
 ### AI / LLM / Bots
 
+- **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — an interactive agent for systems analysts based on **LangChain + LangGraph**. Supports 7 AI frameworks (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), each modifying the operational mode and toolset. Generates SRS/URS and ADR documents with architectural and API recommendations. Docs: Mermaid diagrams (C4, UML).
 - **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — educational project with two Telegram bots to demonstrate LLM memory: `Neznayka` (stateless) and `Znaika` (short-term + long-term memory). Includes structured output (`theses` + `message`), SQLite thesis storage, `/mytheses`, `/reset`, `/resetall` commands, one-command PowerShell bot management, and Mermaid architecture diagrams (C4/UML).
 - **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — Apple-style resume website (Flask, animations, responsive) + Telegram bot (aiogram 3) with RU/EN bilingual interface, timestamped PDF download, project filtering, and shared projects.json data source.
 - **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram bot with 5 AI providers, 8 roles, image/video generation, dialogue memory, and cost tracking in RUB. Docs: 8 Mermaid diagrams (C4, BPMN, UML).
