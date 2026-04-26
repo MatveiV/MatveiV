@@ -14,7 +14,7 @@
 
 ## About Me
 
-Analyst with 19 years of experience in FinTech. I specialise in translating business requirements into architectural decisions and MVPs, and in designing high-load systems — trading platforms and settlement engines. Focused on measurable business outcomes through deep analysis and effective communication between business and engineering.
+Analyst with 20 years of experience in FinTech. I specialise in translating business requirements into architectural decisions and MVPs, and in designing high-load systems — trading platforms and settlement engines. Focused on measurable business outcomes through deep analysis and effective communication between business and engineering.
 
 Developers building the wrong thing and no analyst in sight? I bridge the business↔engineering gap: gather requirements, design architecture, and automate routine work in Python — saving you iterations and money.
 
