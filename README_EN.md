@@ -34,7 +34,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — automated PDF report generation from client dialogue transcriptions. Pipeline: LLM → structured JSON → Jinja2 → WeasyPrint. 5 LLM providers, 4 image-generation backends.
 - **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — auto-generation of Telegram bots and documentation (SRS, URS) from a text description via LLM chains.
 - **[Prompter](https://github.com/MatveiV/Prompter)** — CLI for A/B testing of prompting techniques (zero-shot, few-shot, CoT, role-based) with ranking and Markdown/DOCX report generation.
-- **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram bot with long-term vector memory on Pinecone. Every message is stored as an embedding (text-embedding-3-small, dim=1536); before each reply a semantic search retrieves the top-5 relevant memories via query_vector and injects them into the GPT system prompt. Auto-save by keywords, manual /save command, /forget to clear memory. PineconeVectorClient module encapsulates upsert/query/delete. Docs: 6 Mermaid diagrams (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
+- **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — an intelligent assistant powered by **LangChain + Pinecone**. Implements a full RAG cycle: semantic search over a vector store, automated web page indexing (`WebBaseLoader`), and manual text ingestion. Features user engagement analytics, interest profiling, and real-time knowledge base monitoring. Supports proxy configurations and includes comprehensive architectural docs: Mermaid diagrams (C4 L1, Sequence).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram bot and CLI for comparing AI model responses (GPT, Claude, Gemini, DeepSeek, GLM) via a unified OpenAI-compatible client.
 
 ### Infrastructure & Backend
@@ -61,6 +61,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - Full port of a Flask service to Go: 20× more concurrent requests at a 10 MB image vs 150 MB for Python.
 - OpenAPI 3.1 specification for two servers with reusable schemas and response examples.
 - Set of ML trading strategies for financial time series with confirmed results on historical data.
+- Developed a RAG agent with dynamic web and text indexing capabilities, integrated with a user profiling and engagement analytics subsystem.
 
 ---
 
