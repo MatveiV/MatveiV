@@ -36,6 +36,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[Prompter](https://github.com/MatveiV/Prompter)** — CLI for A/B testing of prompting techniques (zero-shot, few-shot, CoT, role-based) with ranking and Markdown/DOCX report generation.
 - **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — an intelligent assistant powered by **LangChain + Pinecone**. Implements a full RAG cycle: semantic search over a vector store, automated web page indexing (`WebBaseLoader`), and manual text ingestion. Features user engagement analytics, interest profiling, and real-time knowledge base monitoring. Supports proxy configurations and includes comprehensive architectural docs: Mermaid diagrams (C4 L1, Sequence).
 - **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram bot with long-term vector memory on Pinecone. Every message is stored as an embedding (text-embedding-3-small, dim=1536); before each reply a semantic search retrieves the top-5 relevant memories via query_vector and injects them into the GPT system prompt. Auto-save by keywords, manual /save command, /forget to clear memory. PineconeVectorClient module encapsulates upsert/query/delete. Docs: 6 Mermaid diagrams (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
+- **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram bot with intelligent long-term vector memory on Pinecone. Implemented Cosine Similarity logic for automated duplicate filtering and smart vector updates (upsert). Features metadata noise reduction, OpenAI `text-embedding-3-small` support via proxy, and comprehensive logging. Docs: Mermaid (C4, Sequence).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram bot and CLI for comparing AI model responses (GPT, Claude, Gemini, DeepSeek, GLM) via a unified OpenAI-compatible client.
 
 ### Infrastructure & Backend
@@ -63,6 +64,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - OpenAPI 3.1 specification for two servers with reusable schemas and response examples.
 - Set of ML trading strategies for financial time series with confirmed results on historical data.
 - Developed a RAG agent with dynamic web and text indexing capabilities, integrated with a user profiling and engagement analytics subsystem.
+- Developed a "smart" vector memory system with duplicate filtering based on Cosine Similarity, reducing storage volume and improving search relevance.
 
 ---
 
@@ -155,13 +157,13 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 | Category | Stack |
 |----------|-------|
 | Languages | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers |
+| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint |
+| Frameworks | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
 | Data | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance |
 | ML | scikit-learn, LightGBM, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman |
+| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence) |
 | Trading platforms | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
 | Dev tools | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
 | Standards | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
