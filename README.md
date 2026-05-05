@@ -1,4 +1,4 @@
-# Матвей Евгеньевич Васецов
+﻿# Матвей Евгеньевич Васецов
 
 **Системный и бизнес-аналитик · Vibe-кодер · Кандидат физико-математических наук**
 
@@ -37,6 +37,7 @@
 - **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — интеллектуальный помощник на базе **LangChain + Pinecone**. Реализован полный RAG-цикл: семантический поиск по векторной базе, автоматическая индексация веб-страниц (`WebBaseLoader`) и произвольного текста. Включает аналитику активности пользователя, профилирование интересов и мониторинг состояния базы знаний. Поддерживает работу через прокси и содержит детальную архитектурную документацию: Mermaid-диаграммы (C4 L1, Sequence).
 - **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram-бот с долгосрочной векторной памятью на Pinecone. Каждое сообщение сохраняется как эмбеддинг (text-embedding-3-small, dim=1536); перед каждым ответом выполняется семантический поиск топ-5 воспоминаний через query_vector и они подставляются в системный промпт GPT. Автосохранение по ключевым словам, ручная команда /save, очистка памяти /forget. Модуль PineconeVectorClient инкапсулирует upsert/query/delete. Документация: 6 Mermaid-диаграмм (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
 - **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram-бот с интеллектуальной долговременной памятью. Реализован алгоритм косинусного сходства (Cosine Similarity) для автоматической фильтрации дубликатов и умного обновления векторов (upsert). Очистка метаданных от служебного шума, поддержка OpenAI `text-embedding-3-small` через прокси, детальное логирование. Документация: Mermaid (C4, Sequence).
+- **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — модульный финансовый Telegram-бот v2 на **Haystack 2 + Docling + Pinecone**. Локальный OCR/layout через **PyTorch** (DoclingConverter, HybridChunker + tiktoken), RAG-пайплайн (embed → PineconeRetriever → ChatPromptBuilder → Agent → AnswerBuilder), два Pinecone-namespace (`documents` + `chat-history`), автоматическое резюме документа (map-reduce через LLM), инструменты агента: Alpha Vantage, Finviz Vision, SerperDev. Документация: C4 + UML Sequence (Mermaid).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram-бот и CLI для сравнения ответов AI-моделей (GPT, Claude, Gemini, DeepSeek, GLM) через единый OpenAI-совместимый клиент.
 
 ### Инфраструктура и бэкенд
@@ -65,6 +66,7 @@
 - Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
 - Разработка RAG-агента с поддержкой динамической индексации знаний из веба и текстовых фрагментов, интегрированного с аналитической подсистемой профилирования пользователей.
 - Реализовал систему «умной» векторной памяти с фильтрацией дубликатов на основе косинусного сходства, что позволило сократить объем хранимых данных и повысить релевантность поиска.
+- Разработал модульный RAG-бот с локальным OCR (Docling + PyTorch): полный пайплайн от загрузки документа до ответа на вопрос по его содержимому с автоматическим резюме и векторным поиском в Pinecone.
 
 ---
 
@@ -151,11 +153,11 @@
 | Категория | Стек |
 |-----------|------|
 | Языки | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small |
+| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
 | Генерация медиа | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Фреймворки | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
+| Фреймворки | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
 | Данные | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance |
-| ML | scikit-learn, LightGBM, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
+| ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Инфраструктура | Docker, Docker Compose, Grafana Loki, GitHub Actions |
 | BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence) |
 | Торговые платформы | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
