@@ -39,6 +39,7 @@
 - **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram-бот с интеллектуальной долговременной памятью. Реализован алгоритм косинусного сходства (Cosine Similarity) для автоматической фильтрации дубликатов и умного обновления векторов (upsert). Очистка метаданных от служебного шума, поддержка OpenAI `text-embedding-3-small` через прокси, детальное логирование. Документация: Mermaid (C4, Sequence).
 - **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — модульный финансовый Telegram-бот v2 на **Haystack 2 + Docling + Pinecone**. Локальный OCR/layout через **PyTorch** (DoclingConverter, HybridChunker + tiktoken), RAG-пайплайн (embed → PineconeRetriever → ChatPromptBuilder → Agent → AnswerBuilder), два Pinecone-namespace (`documents` + `chat-history`), автоматическое резюме документа (map-reduce через LLM), инструменты агента: Alpha Vantage, Finviz Vision, SerperDev. Документация: C4 + UML Sequence (Mermaid).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram-бот и CLI для сравнения ответов AI-моделей (GPT, Claude, Gemini, DeepSeek, GLM) через единый OpenAI-совместимый клиент.
+- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — умный командный Telegram-бот на базе **Haystack 2.x**, **Pinecone** и **OpenAI** (через proxyapi.ru). Понимает текст, голосовые сообщения и документы. Сохраняет историю команды в векторную БД, отвечает на вопросы по контексту переписки через RAG при упоминании `@team_assistant_text_audio_bot`. Документация: Mermaid-диаграммы (C4, Sequence).
 
 ### Инфраструктура и бэкенд
 
@@ -66,6 +67,7 @@
 - Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
 - Разработка RAG-агента с поддержкой динамической индексации знаний из веба и текстовых фрагментов, интегрированного с аналитической подсистемой профилирования пользователей.
 - Реализовал систему «умной» векторной памяти с фильтрацией дубликатов на основе косинусного сходства, что позволило сократить объем хранимых данных и повысить релевантность поиска.
+- Командный Telegram-бот с Haystack 2.x + Pinecone: автоматическая индексация сообщений, голосовых сообщений (Whisper) и документов (Docling), RAG-ответы на вопросы по контексту чата с упоминанием `@team_assistant_text_audio_bot`.
 - Разработал модульный RAG-бот с локальным OCR (Docling + PyTorch): полный пайплайн от загрузки документа до ответа на вопрос по его содержимому с автоматическим резюме и векторным поиском в Pinecone.
 
 ---

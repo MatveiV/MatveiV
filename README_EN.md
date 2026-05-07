@@ -39,6 +39,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram bot with intelligent long-term vector memory on Pinecone. Implemented Cosine Similarity logic for automated duplicate filtering and smart vector updates (upsert). Features metadata noise reduction, OpenAI `text-embedding-3-small` support via proxy, and comprehensive logging. Docs: Mermaid (C4, Sequence).
 - **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — modular financial Telegram bot v2 built on **Haystack 2 + Docling + Pinecone**. Local OCR/layout via **PyTorch** (DoclingConverter, HybridChunker + tiktoken), RAG pipeline (embed → PineconeRetriever → ChatPromptBuilder → Agent → AnswerBuilder), dual Pinecone namespaces (`documents` + `chat-history`), automatic document summary (map-reduce via LLM), agent tools: Alpha Vantage, Finviz Vision, SerperDev. Docs: C4 + UML Sequence (Mermaid).
 - **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram bot and CLI for comparing AI model responses (GPT, Claude, Gemini, DeepSeek, GLM) via a unified OpenAI-compatible client.
+- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — smart team Telegram bot powered by **Haystack 2.x**, **Pinecone**, and **OpenAI** (via proxyapi.ru). Understands text, voice messages, and documents. Stores chat history in vector DB, answers questions via RAG using chat context when mentioned with `@team_assistant_text_audio_bot`. Docs: Mermaid diagrams (C4, Sequence).
 
 ### Infrastructure & Backend
 
@@ -66,6 +67,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - Set of ML trading strategies for financial time series with confirmed results on historical data.
 - Developed a RAG agent with dynamic web and text indexing capabilities, integrated with a user profiling and engagement analytics subsystem.
 - Developed a "smart" vector memory system with duplicate filtering based on Cosine Similarity, reducing storage volume and improving search relevance.
+- Team Assistant Telegram Bot with Haystack 2.x + Pinecone: automatic indexing of text, voice messages (Whisper), and documents (Docling); RAG-powered Q&A via `@team_assistant_text_audio_bot` mention.
 - Built a modular RAG bot with local OCR (Docling + PyTorch): end-to-end pipeline from document upload to question answering over its content, with automatic summary generation and vector search in Pinecone.
 
 ---
