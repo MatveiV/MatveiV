@@ -46,6 +46,7 @@
 - **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — рефакторинг Python-кода (устранение SQL-инъекций, утечек соединений, гонок потоков, небезопасного хранения паролей) с параллельной реализацией того же REST API на Go. Два Docker-образа на Docker Hub, docker-compose для совместного запуска. Документация: 7 Mermaid-диаграмм (C4 L1/L2/L3, UML классов, Sequence ×3, State, Deployment).
 - **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — стек централизованного логирования (Loki + Grafana) с Docker Compose и bash-скриптами автоустановки.
 - **[CoinParser](https://github.com/MatveiV/CoinParser)** — парсер Telegram-канала с фильтрацией крипто-символов, интеграцией Google Sheets API и экспортом в XLSX.
+- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — CRM-система с двумя интерфейсами: Tkinter Desktop GUI для локальной работы и FastAPI REST API для интеграций. SQLite для хранения данных, экспорт отчётов в Google Sheets с предварительно рассчитанной аналитикой (статусы, суммы, приоритеты). Docker-контейнеризация бэкенда, документирование: C4, UML, ERD, Sequence диаграммы (Mermaid).
 
 ### ML / Финансы
 
@@ -69,6 +70,7 @@
 - Реализовал систему «умной» векторной памяти с фильтрацией дубликатов на основе косинусного сходства, что позволило сократить объем хранимых данных и повысить релевантность поиска.
 - Командный Telegram-бот с Haystack 2.x + Pinecone: автоматическая индексация сообщений, голосовых сообщений (Whisper) и документов (Docling), RAG-ответы на вопросы по контексту чата с упоминанием `@team_assistant_text_audio_bot`.
 - Разработал модульный RAG-бот с локальным OCR (Docling + PyTorch): полный пайплайн от загрузки документа до ответа на вопрос по его содержимому с автоматическим резюме и векторным поиском в Pinecone.
+- Полнофункциональная CRM на Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive интеграция + Docker-контейнеризация. Документация с Mermaid-диаграммами (C4, UML, ERD, Sequence).
 
 ---
 
@@ -157,8 +159,8 @@
 | Языки | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
 | Генерация медиа | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Фреймворки | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
-| Данные | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance |
+| Фреймворки / UI | FastAPI, Flask, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
+| Данные / API | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Инфраструктура | Docker, Docker Compose, Grafana Loki, GitHub Actions |
 | BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence) |

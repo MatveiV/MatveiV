@@ -46,6 +46,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — Python code refactoring (eliminating SQL injections, connection leaks, race conditions, insecure password storage) with a parallel Go implementation of the same REST API. Two Docker images on Docker Hub, docker-compose for joint deployment. Docs: 7 Mermaid diagrams (C4 L1/L2/L3, class diagram, Sequence ×3, State, Deployment).
 - **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — centralised logging stack (Loki + Grafana) with Docker Compose and automated bash install scripts.
 - **[CoinParser](https://github.com/MatveiV/CoinParser)** — Telegram channel parser with crypto-symbol filtering, Google Sheets API integration, and XLSX export.
+- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — dual-interface CRM system: Tkinter Desktop GUI for local use and FastAPI REST API for integrations. SQLite data storage, Google Sheets export with pre-calculated analytics (statuses, amounts, priorities). Docker containerisation for the backend. Docs: C4, UML, ERD, Sequence diagrams (Mermaid).
 
 ### ML / Finance
 
@@ -69,6 +70,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - Developed a "smart" vector memory system with duplicate filtering based on Cosine Similarity, reducing storage volume and improving search relevance.
 - Team Assistant Telegram Bot with Haystack 2.x + Pinecone: automatic indexing of text, voice messages (Whisper), and documents (Docling); RAG-powered Q&A via `@team_assistant_text_audio_bot` mention.
 - Built a modular RAG bot with local OCR (Docling + PyTorch): end-to-end pipeline from document upload to question answering over its content, with automatic summary generation and vector search in Pinecone.
+- Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
 
 ---
 
@@ -163,8 +165,8 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 | Languages | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks | FastAPI, Flask, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
-| Data | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance |
+| Frameworks / UI | FastAPI, Flask, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
+| Data / APIs | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
 | BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence) |
