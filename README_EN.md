@@ -47,6 +47,7 @@ Developers building the wrong thing and no analyst in sight? I bridge the busine
 - **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — centralised logging stack (Loki + Grafana) with Docker Compose and automated bash install scripts.
 - **[CoinParser](https://github.com/MatveiV/CoinParser)** — Telegram channel parser with crypto-symbol filtering, Google Sheets API integration, and XLSX export.
 - **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — dual-interface CRM system: Tkinter Desktop GUI for local use and FastAPI REST API for integrations. SQLite data storage, Google Sheets export with pre-calculated analytics (statuses, amounts, priorities). Docker containerisation for the backend. Docs: C4, UML, ERD, Sequence diagrams (Mermaid).
+- **[Orders CRM](https://github.com/MatveiV/OrdersCRM)** — premium CRM system for warm lead management with intelligent scoring and behavioural metric collection. **Production:** orderscrm.ru (self-signed HTTPS). **Stack:** FastAPI + PostgreSQL 16 (asyncpg) + Nginx + Docker Compose + Watchtower. **Frontend:** Vite + Vanilla JS (client landing + SPA admin panel). **Features:** JWT auth (access/refresh, bcrypt), intelligent lead scoring (8 criteria, 100 pts, hot/warm/cold), auto-creation of Application from Lead, behavioural metrics system (heatmap, top buttons, time slices), service CRUD, production security (DISABLE_DOCS, rate-limit 10r/s, security headers, ports 80/443 only), C4 + UML documentation (Mermaid).
 
 ### ML / Finance
 
@@ -71,6 +72,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - Team Assistant Telegram Bot with Haystack 2.x + Pinecone: automatic indexing of text, voice messages (Whisper), and documents (Docling); RAG-powered Q&A via `@team_assistant_text_audio_bot` mention.
 - Built a modular RAG bot with local OCR (Docling + PyTorch): end-to-end pipeline from document upload to question answering over its content, with automatic summary generation and vector search in Pinecone.
 - Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
+- Orders CRM — production-ready CRM with FastAPI + PostgreSQL 16 + Nginx: intelligent scoring (8 criteria), behavioural metric collection (heatmap, time slices), JWT auth, production security (DISABLE_DOCS, rate-limit, HSTS), 52 files, deployed on a remote server at 185.87.48.13.
 
 ---
 
@@ -165,11 +167,11 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 | Languages | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks / UI | FastAPI, Flask, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv |
+| Frameworks / UI | FastAPI, Flask, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Nginx** |
 | Data / APIs | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence) |
+| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence, ER, Class, Flowchart, State, BPMN) |
 | Trading platforms | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
 | Dev tools | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
 | Standards | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
