@@ -9,7 +9,7 @@
 ---
 
 > *Trading platform, settlement system, or AI agent for your workflow:
-20 years in FinTech + Python + LLM tools → an MVP you won't need to rewrite*
+20 years in FinTech + Python + LLM tools → MVP*
 
 ---
 
