@@ -8,7 +8,8 @@
 
 ---
 
-> *Trading platform, settlement system, or AI agent for your workflow: 20 years in FinTech + Python + LLM tools → an MVP you won't need to rewrite after the first release.*
+> *Trading platform, settlement system, or AI agent for your workflow:
+20 years in FinTech + Python + LLM tools → an MVP you won't need to rewrite*
 
 ---
 
@@ -16,7 +17,7 @@
 
 Analyst with 20 years of experience in FinTech. I specialise in translating business requirements into architectural decisions and MVPs, and in designing high-load systems — trading platforms and settlement engines. Focused on measurable business outcomes through deep analysis and effective communication between business and engineering.
 
-Developers building the wrong thing and no analyst in sight? I bridge the business↔engineering gap: gather requirements, design architecture, and automate routine work in Python — saving you iterations and money.
+I bridge the business↔engineering gap: gather requirements, design architecture, and automate routine work in Python — saving you iterations and money.
 
 ---
 
