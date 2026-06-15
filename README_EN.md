@@ -52,6 +52,7 @@ I bridge the business↔engineering gap: gather requirements, design architectur
 
 ### ML / Finance
 
+- **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — Copy Trading platform for MT4/MT5 trading robots. **Backend:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Frontend:** React 19 + TypeScript + Vite + shadcn/ui + wouter + TanStack Query + recharts. Three-tier fee system (Performance + Subscription + Entry fee + Agent Reward), pagination, deploy pipeline (upload/URL/launch), SRS v4.0 with BPMN, Sequence, C4, State diagrams (Mermaid). API docs: 15 request/response examples.
 - **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — ML in finance: strategy backtesting, feature engineering (EMA, RSI, MACD), classification, time-series forecasting (LSTM, TFT).
 
 ---
@@ -72,8 +73,9 @@ Designing multi-provider AI architectures, building FSM configurators, implement
 - Developed a "smart" vector memory system with duplicate filtering based on Cosine Similarity, reducing storage volume and improving search relevance.
 - Team Assistant Telegram Bot with Haystack 2.x + Pinecone: automatic indexing of text, voice messages (Whisper), and documents (Docling); RAG-powered Q&A via `@team_assistant_text_audio_bot` mention.
 - Built a modular RAG bot with local OCR (Docling + PyTorch): end-to-end pipeline from document upload to question answering over its content, with automatic summary generation and vector search in Pinecone.
-- Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
+ - Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
 - Orders CRM — production-ready CRM with FastAPI + PostgreSQL 16 + Nginx: intelligent scoring (8 criteria), behavioural metric collection (heatmap, time slices), JWT auth, production security (DISABLE_DOCS, rate-limit, HSTS), 52 files, deployed on a remote server at 185.87.48.13.
+- Full Copy Trading platform: FastAPI (25+ endpoints) + standalone React SPA (shadcn/ui, wouter, TanStack Query, recharts). Three-tier fee system with Agent Reward, paginated trade history, MT4/MT5 deploy pipeline. SRS v4.0: BPMN, C4, Sequence, State diagrams (Mermaid).
 
 ---
 
@@ -165,14 +167,14 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 
 | Category | Stack |
 |----------|-------|
-| Languages | Python 3.10+, Go 1.22, SQL, Java, Bash, MQL, TeX |
+| Languages | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
 | AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks / UI | FastAPI, Flask, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Nginx** |
+| Frameworks / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Nginx** |
 | Data / APIs | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, UML Sequence, ER, Class, Flowchart, State, BPMN) |
+| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart) |
 | Trading platforms | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
 | Dev tools | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
 | Standards | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
