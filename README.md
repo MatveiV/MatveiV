@@ -24,6 +24,7 @@
 
 ### AI / LLM / Боты
 
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI-ассистент системного аналитика и архитектора. Анализирует ТЗ и генерирует рецензии с честными метками `needs_review`/`confidence`, пакетную обработку до 50 ТЗ, URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм (C4/UML/ERD) с локальным рендером через Kroki, экономическую оценку (CAPEX/OPEX/ROI) с фактическими расходами LLM, RAG-базу знаний с автоиндексацией артефактов и полный аудит LLM-вызовов (включая локальные Ollama/Qwen в air-gapped-режиме). **Стек:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, sentence-transformers + FAISS, 5 LLM-провайдеров, JWT + RBAC (3 роли). 24 модели данных, 146 pytest, 6 Alembic-миграций. E2E-прогон на демо-документах с исправлением 2 багов (экспорты с кириллицей — RFC 5987; таймаут LLM → `LLM_TIMEOUT`). Документация: C4/UML (Mermaid).
 - **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — интерактивный агент для системного аналитика на базе **LangChain + LangGraph**. Поддерживает 7 AI-фреймворков (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), каждый из которых меняет режим работы и набор инструментов. Генерирует SRS/URS и ADR документы с рекомендациями по архитектуре и API. Документация: Mermaid-диаграммы (C4, UML).
 - **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — учебный проект двух Telegram-ботов для демонстрации памяти LLM: `Незнайка` (без памяти) и `Знайка` (краткосрочная + долгосрочная память). Реализованы structured output (`theses` + `message`), хранение тезисов в SQLite, команды `/mytheses`, `/reset`, `/resetall`, запуск через единый PowerShell-скрипт и архитектурные Mermaid-диаграммы (C4/UML).
 - **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — сайт-резюме в стиле Apple (Flask, анимации, адаптивность) + Telegram-бот (aiogram 3) с двуязычным интерфейсом RU/EN, скачиванием PDF-резюме с timestamp, фильтрацией проектов и единой базой projects.json.
@@ -75,6 +76,7 @@
  - Полнофункциональная CRM на Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive интеграция + Docker-контейнеризация. Документация с Mermaid-диаграммами (C4, UML, ERD, Sequence).
 - Orders CRM — production-ready CRM с FastAPI + PostgreSQL 16 + Nginx: интеллектуальный скоринг (8 критериев), сбор поведенческих метрик (heatmap, временные срезы), JWT-авторизация, production-безопасность (DISABLE_DOCS, rate-limit, HSTS), 52 файла, развёрнута на удалённом сервере 185.87.48.13.
 - Полноценная Copy Trading платформа: FastAPI (25+ endpoints) + standalone React SPA (shadcn/ui, wouter, TanStack Query, recharts). Трёхуровневая система комиссий с Agent Reward, пагинированная история сделок, deploy pipeline для MT4/MT5. SRS v4.0: BPMN, C4, Sequence, State диаграммы (Mermaid).
+- **Analyst-Architect-AI** — полноценная платформа AI-аналитика (FastAPI + React + Ollama): AI-рецензии ТЗ с честными метками `needs_review`/`confidence`, batch-обработка до 50 ТЗ, генерация URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм с локальным рендером (Kroki), экономический модуль CAPEX/OPEX/ROI с фактическими расходами LLM, RAG-база знаний с автоиндексацией артефактов, аудит всех LLM-вызовов (локально через Ollama/Qwen — данные не покидают контур). 146 автотестов + полный E2E-прогон на демо-документах (CRM, торговая платформа, страхование); найдены и исправлены 2 бага: 500 на экспортах с кириллицей в названии (RFC 5987 `Content-Disposition`) и таймаут LLM-вызовов на медленной локальной модели (новая настройка `LLM_TIMEOUT`).
 
 ---
 
@@ -161,13 +163,13 @@
 | Категория | Стек |
 |-----------|------|
 | Языки | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
+| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR**; RAG-пайплайны; **FAISS**, sentence-transformers |
 | Генерация медиа | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Фреймворки / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Nginx** |
+| Фреймворки / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Alembic**, **uvicorn**, pytest, python-docx, **CodeMirror**, **Nginx** |
 | Данные / API | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Инфраструктура | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart) |
+| BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart), **Kroki (локальный рендер диаграмм)** |
 | Торговые платформы | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
 | Инструменты | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
 | Стандарты | PMBoK, BABOK, ГОСТ 34, IEEE 830, ISO/IEC/IEEE 29148 |

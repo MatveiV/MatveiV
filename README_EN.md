@@ -25,6 +25,7 @@ I bridge the business↔engineering gap: gather requirements, design architectur
 
 ### AI / LLM / Bots
 
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI assistant for systems analysts and architects. Reviews technical specifications (TORs) and generates reviews with honest `needs_review`/`confidence` flags, batch review of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types (C4/UML/ERD) with local rendering via Kroki, economic assessment (CAPEX/OPEX/ROI) based on actual LLM spend, RAG knowledge base with auto-indexing of generated artifacts, and full audit of all LLM calls (including local Ollama/Qwen in air-gapped mode). **Stack:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, sentence-transformers + FAISS, 5 LLM providers, JWT + RBAC (3 roles). 24 data models, 146 pytest, 6 Alembic migrations. E2E run on demo documents with 2 bugs fixed (exports with Cyrillic filenames — RFC 5987; LLM timeout → `LLM_TIMEOUT`). Docs: C4/UML (Mermaid).
 - **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — an interactive agent for systems analysts based on **LangChain + LangGraph**. Supports 7 AI frameworks (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), each modifying the operational mode and toolset. Generates SRS/URS and ADR documents with architectural and API recommendations. Docs: Mermaid diagrams (C4, UML).
 - **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — educational project with two Telegram bots to demonstrate LLM memory: `Neznayka` (stateless) and `Znaika` (short-term + long-term memory). Includes structured output (`theses` + `message`), SQLite thesis storage, `/mytheses`, `/reset`, `/resetall` commands, one-command PowerShell bot management, and Mermaid architecture diagrams (C4/UML).
 - **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — Apple-style resume website (Flask, animations, responsive) + Telegram bot (aiogram 3) with RU/EN bilingual interface, timestamped PDF download, project filtering, and shared projects.json data source.
@@ -76,6 +77,7 @@ Designing multi-provider AI architectures, building FSM configurators, implement
  - Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
 - Orders CRM — production-ready CRM with FastAPI + PostgreSQL 16 + Nginx: intelligent scoring (8 criteria), behavioural metric collection (heatmap, time slices), JWT auth, production security (DISABLE_DOCS, rate-limit, HSTS), 52 files, deployed on a remote server at 185.87.48.13.
 - Full Copy Trading platform: FastAPI (25+ endpoints) + standalone React SPA (shadcn/ui, wouter, TanStack Query, recharts). Three-tier fee system with Agent Reward, paginated trade history, MT4/MT5 deploy pipeline. SRS v4.0: BPMN, C4, Sequence, State diagrams (Mermaid).
+- **Analyst-Architect-AI** — full-fledged AI analyst platform (FastAPI + React + Ollama): AI reviews of TORs with honest `needs_review`/`confidence` flags, batch review of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types with local rendering (Kroki), CAPEX/OPEX/ROI economics with actual LLM spend, RAG knowledge base with auto-indexing of artifacts, audit of every LLM call (locally via Ollama/Qwen — data never leaves the perimeter). 146 automated tests + full E2E run on demo documents (CRM, trading platform, insurance); found and fixed 2 bugs: 500 errors on exports with Cyrillic titles (RFC 5987 `Content-Disposition`) and LLM call timeouts on slow local models (new `LLM_TIMEOUT` setting).
 
 ---
 
@@ -168,13 +170,13 @@ Requirements gathering and analysis (in English). ATS development for VT Trader 
 | Category | Stack |
 |----------|-------|
 | Languages | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR** |
+| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR**; RAG pipelines; **FAISS**, sentence-transformers |
 | Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Nginx** |
+| Frameworks / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Alembic**, **uvicorn**, pytest, python-docx, **CodeMirror**, **Nginx** |
 | Data / APIs | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
 | ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
 | Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart) |
+| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart), **Kroki (local diagram rendering)** |
 | Trading platforms | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
 | Dev tools | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
 | Standards | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
