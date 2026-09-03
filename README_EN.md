@@ -8,202 +8,158 @@
 
 ---
 
-> *Trading platform, settlement system, or AI agent for your workflow:
-20 years in FinTech + Python + LLM tools → MVP*
+> *A trading platform, a settlement system, or an AI agent for your process: 20 years in FinTech + Python + AI/LLM tooling → MVP.*
 
 ---
 
 ## About Me
 
-Analyst with 20 years of experience in FinTech. I specialise in translating business requirements into architectural decisions and MVPs, and in designing high-load systems — trading platforms and settlement engines. Focused on measurable business outcomes through deep analysis and effective communication between business and engineering.
+Systems/business analyst with 20 years of FinTech experience. I specialize in translating business requirements into architectural solutions and MVPs, and in designing high-load systems — trading platforms and settlement systems. Since 2024, an active AI/LLM builder (vibe-coding): I design multi-provider AI architectures, RAG pipelines, MCP servers and AI agents, and take them to production. Focused on measurable business outcomes through deep analysis and effective communication between business and development.
 
-I bridge the business↔engineering gap: gather requirements, design architecture, and automate routine work in Python — saving you iterations and money.
+Registered as a Sole Proprietor (IE) in Russia since April 2023; since 07.2024 — full focus on own AI/LLM products and independent systems-analysis consulting.
+
+I bridge business and development: gathering requirements, designing architecture, and automating routine work in Python — saving you iterations and money.
 
 ---
 
 ## Projects
 
-### AI / LLM / Bots
+### AI / LLM 
 
-- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI assistant for systems analysts and architects. Reviews technical specifications (TORs) and generates reviews with honest `needs_review`/`confidence` flags, batch review of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types (C4/UML/ERD) with local rendering via Kroki, economic assessment (CAPEX/OPEX/ROI) based on actual LLM spend, RAG knowledge base with auto-indexing of generated artifacts, and full audit of all LLM calls (including local Ollama/Qwen in air-gapped mode). **Stack:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, sentence-transformers + FAISS, 5 LLM providers, JWT + RBAC (3 roles). 24 data models, 146 pytest, 6 Alembic migrations. E2E run on demo documents with 2 bugs fixed (exports with Cyrillic filenames — RFC 5987; LLM timeout → `LLM_TIMEOUT`). Docs: C4/UML (Mermaid).
-- **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — an interactive agent for systems analysts based on **LangChain + LangGraph**. Supports 7 AI frameworks (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), each modifying the operational mode and toolset. Generates SRS/URS and ADR documents with architectural and API recommendations. Docs: Mermaid diagrams (C4, UML).
-- **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — educational project with two Telegram bots to demonstrate LLM memory: `Neznayka` (stateless) and `Znaika` (short-term + long-term memory). Includes structured output (`theses` + `message`), SQLite thesis storage, `/mytheses`, `/reset`, `/resetall` commands, one-command PowerShell bot management, and Mermaid architecture diagrams (C4/UML).
-- **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — Apple-style resume website (Flask, animations, responsive) + Telegram bot (aiogram 3) with RU/EN bilingual interface, timestamped PDF download, project filtering, and shared projects.json data source.
-- **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram bot with 5 AI providers, 8 roles, image/video generation, dialogue memory, and cost tracking in RUB. Docs: 8 Mermaid diagrams (C4, BPMN, UML).
-- **[ShortLongMemory Bots](https://github.com/MatveiV/ShortLongMemory_Bots)** — Telegram bots with short-term (deque) and long-term (RAG + ChromaDB) memory. FSM configurator, 3 AI providers, 16+ models.
-- **[Local AI Agent Bot](https://github.com/MatveiV/Local_AI_Agent_Bot)** — CLI and Telegram AI agent with OpenAI function calling and 11 tools (search, weather, crypto, QR, PDF/DOCX, HTTP, terminal). 3 providers, 13+ models.
-- **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — MCP server (FastAPI) + Telegram bot with LLM tool calling. 10 tools: product catalogue (SQLite), calculator, CoinGecko, RAWG, LibreTranslate.
-- **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — automated PDF report generation from client dialogue transcriptions. Pipeline: LLM → structured JSON → Jinja2 → WeasyPrint. 5 LLM providers, 4 image-generation backends.
-- **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — auto-generation of Telegram bots and documentation (SRS, URS) from a text description via LLM chains.
-- **[Prompter](https://github.com/MatveiV/Prompter)** — CLI for A/B testing of prompting techniques (zero-shot, few-shot, CoT, role-based) with ranking and Markdown/DOCX report generation.
-- **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — an intelligent assistant powered by **LangChain + Pinecone**. Implements a full RAG cycle: semantic search over a vector store, automated web page indexing (`WebBaseLoader`), and manual text ingestion. Features user engagement analytics, interest profiling, and real-time knowledge base monitoring. Supports proxy configurations and includes comprehensive architectural docs: Mermaid diagrams (C4 L1, Sequence).
-- **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram bot with long-term vector memory on Pinecone. Every message is stored as an embedding (text-embedding-3-small, dim=1536); before each reply a semantic search retrieves the top-5 relevant memories via query_vector and injects them into the GPT system prompt. Auto-save by keywords, manual /save command, /forget to clear memory. PineconeVectorClient module encapsulates upsert/query/delete. Docs: 6 Mermaid diagrams (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
-- **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram bot with intelligent long-term vector memory on Pinecone. Implemented Cosine Similarity logic for automated duplicate filtering and smart vector updates (upsert). Features metadata noise reduction, OpenAI `text-embedding-3-small` support via proxy, and comprehensive logging. Docs: Mermaid (C4, Sequence).
-- **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — modular financial Telegram bot v2 built on **Haystack 2 + Docling + Pinecone**. Local OCR/layout via **PyTorch** (DoclingConverter, HybridChunker + tiktoken), RAG pipeline (embed → PineconeRetriever → ChatPromptBuilder → Agent → AnswerBuilder), dual Pinecone namespaces (`documents` + `chat-history`), automatic document summary (map-reduce via LLM), agent tools: Alpha Vantage, Finviz Vision, SerperDev. Docs: C4 + UML Sequence (Mermaid).
-- **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram bot and CLI for comparing AI model responses (GPT, Claude, Gemini, DeepSeek, GLM) via a unified OpenAI-compatible client.
-- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — smart team Telegram bot powered by **Haystack 2.x**, **Pinecone**, and **OpenAI** (via proxyapi.ru). Understands text, voice messages, and documents. Stores chat history in vector DB, answers questions via RAG using chat context when mentioned with `@team_assistant_text_audio_bot`. Docs: Mermaid diagrams (C4, Sequence).
-
-### Infrastructure & Backend
-
-- **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — Python code refactoring (eliminating SQL injections, connection leaks, race conditions, insecure password storage) with a parallel Go implementation of the same REST API. Two Docker images on Docker Hub, docker-compose for joint deployment. Docs: 7 Mermaid diagrams (C4 L1/L2/L3, class diagram, Sequence ×3, State, Deployment).
-- **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — centralised logging stack (Loki + Grafana) with Docker Compose and automated bash install scripts.
-- **[CoinParser](https://github.com/MatveiV/CoinParser)** — Telegram channel parser with crypto-symbol filtering, Google Sheets API integration, and XLSX export.
-- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — dual-interface CRM system: Tkinter Desktop GUI for local use and FastAPI REST API for integrations. SQLite data storage, Google Sheets export with pre-calculated analytics (statuses, amounts, priorities). Docker containerisation for the backend. Docs: C4, UML, ERD, Sequence diagrams (Mermaid).
-- **[Orders CRM](https://github.com/MatveiV/OrdersCRM)** — premium CRM system for warm lead management with intelligent scoring and behavioural metric collection. **Production:** orderscrm.ru (self-signed HTTPS). **Stack:** FastAPI + PostgreSQL 16 (asyncpg) + Nginx + Docker Compose + Watchtower. **Frontend:** Vite + Vanilla JS (client landing + SPA admin panel). **Features:** JWT auth (access/refresh, bcrypt), intelligent lead scoring (8 criteria, 100 pts, hot/warm/cold), auto-creation of Application from Lead, behavioural metrics system (heatmap, top buttons, time slices), service CRUD, production security (DISABLE_DOCS, rate-limit 10r/s, security headers, ports 80/443 only), C4 + UML documentation (Mermaid).
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — an AI assistant for systems analysts: spec review with honest `needs_review`/`confidence` labels, batch processing of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types (C4/UML/ERD) rendered locally via Kroki, economic evaluation (CAPEX/OPEX/ROI), a RAG knowledge base with auto-indexing, full LLM-call auditing (including local Ollama/Qwen in air-gapped mode). **Stack:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM providers, JWT + RBAC, 146 pytest tests.
+- **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — an interactive agent on **LangChain + LangGraph** supporting 7 AI frameworks (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), each changing the working mode and toolset. Generates SRS/URS and ADR documents with architecture and API recommendations.
+- **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — an intelligent assistant on **LangChain + Pinecone**: a full RAG cycle, semantic search, automatic web-page indexing, user-activity analytics.
+- **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — a modular financial Telegram bot on **Haystack 2 + Docling + Pinecone**: local OCR/layout via PyTorch, a RAG pipeline, automatic document summarization, Alpha Vantage, Finviz Vision and SerperDev tools.
+- **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — automated PDF report generation from client-call transcripts: LLM → structured JSON → Jinja2 → WeasyPrint.
+- **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — auto-generates Telegram bots and documentation (SRS, URS) from a text description via LLM chains.
+- **[Prompter](https://github.com/MatveiV/Prompter)** — a CLI for A/B-testing prompting techniques (zero-shot, few-shot, CoT, role-based) with ranking and Markdown/DOCX report generation.
 
 ### ML / Finance
 
-- **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — Copy Trading platform for MT4/MT5 trading robots. **Backend:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Frontend:** React 19 + TypeScript + Vite + shadcn/ui + wouter + TanStack Query + recharts. Three-tier fee system (Performance + Subscription + Entry fee + Agent Reward), pagination, deploy pipeline (upload/URL/launch), SRS v4.0 with BPMN, Sequence, C4, State diagrams (Mermaid). API docs: 15 request/response examples.
+- **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — a Copy Trading platform for MT4/MT5 trading robots. **Backend:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Frontend:** React 19 + TypeScript + Vite + shadcn/ui. A three-tier fee system, a deploy pipeline, SRS v4.0 (BPMN, Sequence, C4, State).
 - **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — ML in finance: strategy backtesting, feature engineering (EMA, RSI, MACD), classification, time-series forecasting (LSTM, TFT).
+
+### Infrastructure & Backend
+
+- **[Orders CRM](https://github.com/MatveiV/OrdersCRM)** — a premium CRM system for lead management with intelligent scoring. **Production:** orderscrm.ru. **Stack:** FastAPI + PostgreSQL 16 (asyncpg) + Nginx + Docker Compose + Watchtower. JWT auth, lead scoring (8 criteria), behavioral metrics, production security (rate limiting, security headers).
+- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — a CRM with two interfaces: a Tkinter desktop GUI and a FastAPI REST API. SQLite, report export to Google Sheets, Docker containerization.
+- **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — refactored Python code (eliminating SQL injections, connection leaks, race conditions) with a parallel REST API implementation in Go. Two Docker images on Docker Hub.
+- **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — a centralized logging stack (Loki + Grafana) with Docker Compose and bash auto-install scripts.
+- **[CoinParser](https://github.com/MatveiV/CoinParser)** — a Telegram channel parser with crypto-symbol filtering, Google Sheets API integration and XLSX export.
+
+### Bots (most relevant for target roles)
+
+- **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — a Telegram bot with 5 AI providers, 8 roles, image/video generation, dialogue memory and RUB cost tracking.
+- **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — an MCP server (FastAPI) + Telegram bot with LLM tool calling. 10 tools: product catalog, calculator, CoinGecko, RAWG.
+- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — a smart team Telegram bot on **Haystack 2.x + Pinecone + OpenAI**: text, voice messages and documents, RAG answers over chat context.
 
 ---
 
 ## Work Experience
 
-### Jul 2024 — Present · Self-employed (IE) · Systems & Business Analyst, Vibe-Developer, Quantitative Researcher
+### 07.2024 — Present · Sole Proprietor (IE) · Systems/Business Analyst, AI/LLM Developer, Quantitative Researcher
 
-Designing multi-provider AI architectures, building FSM configurators, implementing RAG pipelines, refactoring Python code, building REST APIs in Go, assembling multi-stage Docker images, writing architectural documentation with Mermaid/PlantUML diagrams (C4, BPMN, UML).
+*Registered as a Sole Proprietor (IE) in Russia since April 2023, during the Tastyworks engagement at Raccoonsoft/Devexperts; since 2024 — full focus on AI/LLM development.*
+
+Multi-provider AI architecture design, FSM configurator development, RAG pipeline implementation, Python code refactoring, Go REST API implementation, multi-stage Docker image builds.
 
 **Key achievements:**
-- Unified OpenAI-compatible architecture for 5 heterogeneous providers — no bot code changes required when switching.
-- AI agent with 11 tools: two independent UIs (CLI and Telegram) on a single core with zero code duplication.
-- Full port of a Flask service to Go: 20× more concurrent requests at a 10 MB image vs 150 MB for Python.
-- OpenAPI 3.1 specification for two servers with reusable schemas and response examples.
-- Set of ML trading strategies for financial time series with confirmed results on historical data.
-- Developed a RAG agent with dynamic web and text indexing capabilities, integrated with a user profiling and engagement analytics subsystem.
-- Developed a "smart" vector memory system with duplicate filtering based on Cosine Similarity, reducing storage volume and improving search relevance.
-- Team Assistant Telegram Bot with Haystack 2.x + Pinecone: automatic indexing of text, voice messages (Whisper), and documents (Docling); RAG-powered Q&A via `@team_assistant_text_audio_bot` mention.
-- Built a modular RAG bot with local OCR (Docling + PyTorch): end-to-end pipeline from document upload to question answering over its content, with automatic summary generation and vector search in Pinecone.
- - Full-featured CRM in Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive integration + Docker containerisation. Documentation with Mermaid diagrams (C4, UML, ERD, Sequence).
-- Orders CRM — production-ready CRM with FastAPI + PostgreSQL 16 + Nginx: intelligent scoring (8 criteria), behavioural metric collection (heatmap, time slices), JWT auth, production security (DISABLE_DOCS, rate-limit, HSTS), 52 files, deployed on a remote server at 185.87.48.13.
-- Full Copy Trading platform: FastAPI (25+ endpoints) + standalone React SPA (shadcn/ui, wouter, TanStack Query, recharts). Three-tier fee system with Agent Reward, paginated trade history, MT4/MT5 deploy pipeline. SRS v4.0: BPMN, C4, Sequence, State diagrams (Mermaid).
-- **Analyst-Architect-AI** — full-fledged AI analyst platform (FastAPI + React + Ollama): AI reviews of TORs with honest `needs_review`/`confidence` flags, batch review of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types with local rendering (Kroki), CAPEX/OPEX/ROI economics with actual LLM spend, RAG knowledge base with auto-indexing of artifacts, audit of every LLM call (locally via Ollama/Qwen — data never leaves the perimeter). 146 automated tests + full E2E run on demo documents (CRM, trading platform, insurance); found and fixed 2 bugs: 500 errors on exports with Cyrillic titles (RFC 5987 `Content-Disposition`) and LLM call timeouts on slow local models (new `LLM_TIMEOUT` setting).
 
----
+- A unified OpenAI-compatible architecture for 5 different providers with no bot code changes.
+- An AI agent with 11 tools and an MCP server: two independent UIs (CLI and Telegram) on one core.
+- A full port of a Flask service to Go: 20x more concurrent requests with a 10 MB image vs. 150 MB.
+- Analyst-Architect-AI — a full-fledged AI-analyst platform (146 automated tests, a full E2E run, 2 critical bugs found and fixed).
+- Orders CRM and TradingRobotMarketplace — taken to production / SRS v4.0.
+- A set of ML strategies for financial time series with confirmed results on historical data.
 
-### Apr 2025 — Nov 2025 · Techcoredev.ru (JSC Innovative Technologies) · Systems Analyst
+### 04.2025 — 11.2025 · Techcoredev.ru (JSC "Innovative Technologies") · Systems Analyst
 
-**Project:** Insurance product management system.
+**Project:** insurance product management system. Full-cycle specification development, architecture design (BPMN, ERD, UML, C4), legacy system reverse engineering using AI.
 
-Full specification lifecycle. Architectural design using BPMN, ERD, UML, C4. Legacy system reverse engineering with AI-assisted code and business-logic analysis.
-
-**Achievement:** Accelerated the design phase by introducing AI for generating standard documentation fragments and analysing legacy code.
+**Achievement:** accelerated the design phase by introducing AI for generating standard documentation fragments and analyzing legacy code.
 
 *Node.js, DBeaver, MS SQL Server, Confluence, Cursor, Windsurf, Draw.io, PlantUML, Figma.*
 
----
+### 04.2021 — 03.2024 · Raccoonsoft.ru & Devexperts.com · Lead Analyst
 
-### Apr 2021 — Mar 2024 · Raccoonsoft.ru & Devexperts.com · Lead Analyst
+**Project:** the Tastyworks iPad mobile trading platform for stocks, derivatives, bonds, FX and crypto (tastytrade.com). Elicited and modeled requirements in user stories and system specifications. Reverse-engineered the mobile app and the platform's thick and thin clients.
 
-**Project:** Tastyworks iPad mobile trading platform for stocks, derivatives (options, futures), bonds, FX, and crypto ([tastytrade.com](https://tastytrade.com)).
+**Achievement:** successful product launch; reduced development-phase iterations through detailed requirements maintained in Jira.
 
-Requirements elicitation and modelling in user stories and system specifications for the iPad client. Participation in UI/UX, integration, and overall architecture design. Reverse engineering of the mobile, thick, and thin clients. Bridge between business stakeholders (trader representatives) and the development team.
+*JIRA, GitHub, Figma, Java, MindManager, Slack.*
 
-**Achievement:** Successful product launch. Reduced the number of development iterations through detailed requirements written directly in Jira rather than Confluence.
+### 12.2013 — 04.2025 · LLC "LANIT-TERCOM" · Lead Analyst
 
-*JIRA, GitHub, Figma, Java, MindManager.*
+- **Housing/utility services for VTsKP-EIRTs** (Saint Petersburg) and **GIS ZHKH**. Requirements elicitation, legacy reverse engineering (DFD/IDEF0/BPMN/EPC/ARIS/C4). *Oracle, PostgreSQL, 1C, PowerDesigner, ARIS, Bizagi, JIRA, Confluence, Enterprise Architect.*
+- **MESH for the Moscow IT Department** (school-olympiad management). BFT analysis, functional/technical specs, UML sequence diagrams. *PostgreSQL, Java, Kafka, JIRA, Confluence, Grafana, Postman.*
+- **VEGA FEM and "Digital Twin of Seismic Exploration"** for Gazprom Neft. *ARIS, MSSQL Server, 1C.*
+- **Cancer Registry** within EMIAS for the Moscow IT Department.
+- **Toyota** (Toyota Motor Russia) — Vision and technical specs for the warehouse and quality-control subsystems.
+- **AREA9** for Area9 Lyceum — adaptation of an adaptive-learning SaaS platform, UI and content localization.
+- **Presale estimates:** ETWeb Enterprise, GIS TEK SPb, systems for Rosatom, "Traffic Management" for YOTA, "Inventory" for Rosnedra, and others.
 
----
+### 05.2013 — 12.2013 · Deutsche Telekom IT Solutions · Senior Business Analyst
 
-### Dec 2013 — Apr 2025 · LANIT-TERCOM LLC · Lead Analyst
+**Project:** De-mail — a notarized e-mail service. Analyzed functional requirements, produced business-process descriptions, specifications and diagrams (DFD, ERM, BPMN, UML).
 
-**Projects:**
+*Polarion, JIRA, Confluence, Enterprise Architect, MindManager.*
 
-- **Housing & Utilities Services for VCKP-EIRC** (utility bills in Saint Petersburg) and GIS Housing. Requirements elicitation and modelling, integration and IT-infrastructure descriptions, legacy system reverse engineering. Methodologies: DFD/IDEF0/BPMN/EPC/ARIS/C4. *Oracle, PostgreSQL, 1C, PowerDesigner, ARIS, Bizagi, JIRA, Confluence, Enterprise Architect.*
-- **Moscow Electronic School (MES) for Moscow DIT** (KIS GUSOEV, school olympiad management). BFT analysis, TOR/detailed TOR/PPP creation, UML Sequence diagrams, integration testing. *PostgreSQL, Java, Kafka, JIRA, Confluence, Grafana, Postman.*
-- **VEGA FEM and "Digital Twin of Seismic Exploration"** for Gazprom Neft PJSC. Adaptation of financial-economic and geological decision-support systems. *ARIS, MSSQL Server, 1C.*
-- **Cancer Registry in EMIAS** for Moscow DIT. Legacy system reverse engineering, BPMN/UML specification authoring.
-- **Toyota** for Toyota Motor Russia LLC. Vision and TOR for warehouse and quality-control subsystems.
-- **AREA9** for Area9 Lyceum. Adaptation of an international adaptive-learning SaaS platform, full UI and content localisation.
-- **Presale assessments:** ETWeb Enterprise, GIS TEK SPb, IS for Rosatom, Traffic Management IS for YOTA, Reserves IS for Rosnedra, and others.
+### 05.2012 — 03.2013 · TKB BNP Paribas Investment Partners · Senior Business Process Analyst
 
----
-
-### May 2013 — Dec 2013 · Deutsche Telekom IT Solutions · Senior Business Analyst
-
-**Project:** De-mail — notarial e-mail service.
-
-Functional requirements analysis, business process descriptions, specifications, and diagrams (DFD, ERM, BPMN, UML). The comprehensive documentation package (SRS, process models) I prepared became the foundation for a successful preliminary design review.
-
-*Polarion, JIRA, Confluence, Enterprise Architect.*
-
----
-
-### May 2012 — Mar 2013 · TKB BNP Paribas Investment Partners · Senior Business Process Analyst
-
-**Projects:** Model portfolio, Structured products, Value-at-Risk, CAPM, ATP, MTS-ATS-Robot, Data Quality, Data Mining.
-
-Specifications for Front-Middle-Back Office and Risk Management software. Analysis and formalisation of mathematical models for yield and risk calculation. Data flow design from market feeds (exchange feeds, 1C) to the calculation engine and reporting data marts.
-
-**Achievement:** The requirements package underpinned a successful software upgrade.
+**Projects:** asset portfolio management models, structured products, Value-at-Risk, CAPM, ATP, MTS-ATS-Robot, data quality, data mining.
 
 *Excel, yEd, QUIK, MetaTrader 4/5 (+MQL), 1C, MS SQL.*
 
----
+### 08.2007 — 05.2012 · Devexperts.com · Business/Systems/Financial Analyst
 
-### Aug 2007 — May 2012 · Devexperts.com · Business / Systems / Financial Analyst
-
-**Projects:** ATS (algorithmic trading strategies), FX and binary options, technical analysis (Charting), dealing, mobile clients, FIX integration, risk management, back office, UI localisation. Trading platforms: ThinkOrSwim, GFT Dealbook 360, DXtrade.
-
-Requirements gathering and analysis (in English), specification design and management for financial instruments (options, futures, FX, binary options, bet). UI/UX analysis and design. Trading workflow design, margin calculation descriptions, and trading report specifications. Platform adaptation for specific broker and regulatory requirements.
-
-**Achievement:** My specifications were the key reference document for the development team. The platform launched successfully and handled peak loads.
+**Projects:** algorithmic trading strategies, FX and binary options, technical analysis, dealing, mobile clients, FIX integration, risk management, back-office. Platforms: ThinkOrSwim, GFT Dealbook 360, DXtrade.
 
 *DOORS, Polarion, JIRA, Confluence, Enterprise Architect, FIX protocol.*
 
----
+### 02.2006 — 08.2007 · Visual Trading Systems LLC · Business Analyst
 
-### Feb 2006 — Aug 2007 · Visual Trading Systems LLC · Business Analyst
-
-**Project:** ATS modules and Backtesting Engine for the VT Trader platform (Capital Market Services FX).
-
-Requirements gathering and analysis (in English). ATS development for VT Trader based on user forum requests. Backtesting Engine module design.
-
-**Achievement:** Successful platform enhancement launch.
+**Project:** ATS and Backtesting Engine modules for the VT Trader platform (Capital Market Services FX).
 
 *VT Trader, MetaTrader (+MQL), MetaStock, Tradestation, Wealth-Lab.*
 
 ---
 
-## Tech Stack
+## Technologies
 
-| Category | Stack |
-|----------|-------|
-| Languages | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; prompt engineering; Cerebras WSE; HuggingFace Inference Providers; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR**; RAG pipelines; **FAISS**, sentence-transformers |
-| Media generation | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Frameworks / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Alembic**, **uvicorn**, pytest, python-docx, **CodeMirror**, **Nginx** |
-| Data / APIs | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
-| ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
-| Infrastructure | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA tools | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart), **Kroki (local diagram rendering)** |
-| Trading platforms | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
-| Dev tools | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
-| Standards | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
+| Category            | Stack |
+| ------------------- | ----- |
+| Languages            | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
+| AI / LLM             | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; prompt engineering; RAG; FAISS, sentence-transformers |
+| Frameworks / UI      | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, pytest, Nginx |
+| Data / API           | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, Google Sheets API, Google Drive API |
+| ML                   | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
+| Infrastructure       | Docker, Docker Compose, Grafana Loki, GitHub Actions |
+| BA / SA tools        | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, UML), Kroki |
+| Trading platforms    | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
+| Standards            | PMBoK, BABOK, GOST 34, IEEE 830, ISO/IEC/IEEE 29148 |
 
 ---
 
 ## Education
 
-| Years | Institution | Degree / Specialisation |
-|-------|-------------|------------------------|
-| 1995–1998 | Saint Petersburg State University, Postgraduate, Faculty of Applied Mathematics and Control Processes | PhD in Mathematics (Candidate of Physical and Mathematical Sciences), Mathematical Cybernetics. Thesis: "Quasi-perfect Optimality Principles in Classical Cooperative Games" |
-| 1990–1995 | Saint Petersburg State University, Faculty of Applied Mathematics and Control Processes | MSc, Applied Mathematics. Thesis: "Game Theory: Decision-Making Models in Economics" |
-| 1999–2002 | Saint Petersburg State University (Economics Faculty) & International Banking Institute (IBI) | Economist, Finance and Credit. Thesis: "Application of the Real Options Method for Evaluating Long-Term Investment Projects" |
+| Years     | Institution | Degree / Field |
+| --------- | ----------- | ---------------- |
+| 1995–1998 | Saint Petersburg State University, postgraduate study, Faculty of Applied Mathematics and Control Processes | Candidate of Physics & Mathematics Sciences, Mathematical Cybernetics. Thesis: "Quasi-perfect optimality principles in classical cooperative games" |
+| 1990–1995 | Saint Petersburg State University, Faculty of Applied Mathematics and Control Processes | Mathematician, Applied Mathematics. Thesis: "Game theory: decision-making models in economics" |
+| 1999–2002 | Saint Petersburg State University (Faculty of Economics) and International Banking Institute (IBI) | Economist, Finance & Credit. Thesis: "Applying the real options method to the valuation of long-term investment projects" |
 
 ---
 
-## Certifications & Training
+## Certificates & Training
 
-- 2026 — "Vibe-Coder" professional course (Zerocoder University)
-- 2026 — Prompt Engineering Intensive (Zerocoder University)
-- 2025 — "AI Chatbot Development" course (Zerocoder University)
+- 2026 — "Vibe-Coding Profession" course (Zerocoder University)
+- 2026 — "Prompt Engineering Intensive" course (Zerocoder University)
+- 2025 — "AI-Assistant Chatbot Development" course (Zerocoder University)
 - 2025 — Frontend: Start (itlogia.ru)
 - 2025 — ML in Financial Analysis (OTUS.ru)
-- 2020 — ARIS Modelling (Luxoft Training)
-- 2009 — Options Trading School (Eltra Investment Company)
-- 2005 — Finance and International Business course, Aarhus School of Business, Denmark
-- 2005 — TOEFL, Aarhus School of Business, Denmark
+- 2020 — ARIS Modeling (Luxoft Training)
+- 2009 — Options School (Eltra Investment Company)
+- 2005 — Finance and International Business course, Aarhus School of Business, Denmark (incl. TOEFL)
 - 1995 — Annual programme in macro/microeconomics and finance, European University at St. Petersburg & EMIN
 
 ---
