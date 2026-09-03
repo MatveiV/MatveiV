@@ -14,7 +14,9 @@
 
 ## Кто я
 
-Аналитик с 20-летним опытом в FinTech. Специализируюсь на трансляции бизнес-требований в архитектурные решения и MVP, проектировании высоконагруженных систем — торговых платформ и расчётных систем. Нацелен на измеримый бизнес-результат через глубокий анализ и эффективную коммуникацию между бизнесом и разработкой.
+Системный/бизнес-аналитик с 20-летним опытом в FinTech. Специализируюсь на трансляции бизнес-требований в архитектурные решения и MVP, проектировании высоконагруженных систем — торговых платформ и расчётных систем. С 2024 года — практикующий AI/LLM-разработчик (vibe-coding): проектирую мультипровайдерные AI-архитектуры, RAG-пайплайны, MCP-серверы и AI-агентов, довожу их до production. Нацелен на измеримый бизнес-результат через глубокий анализ и эффективную коммуникацию между бизнесом и разработкой.
+
+ИП зарегистрировано с апреля 2023 года; с 07.2024 — фокус на собственных AI/LLM-продуктах и проектной системной аналитике.
 
 Закрываю связку бизнес↔разработка: собираю требования, проектирую архитектуру и автоматизирую рутину на Python — вы экономите итерации и деньги.
 
@@ -22,137 +24,101 @@
 
 ## Проекты
 
-### AI / LLM / Боты
+### AI / LLM
 
-- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI-ассистент системного аналитика и архитектора. Анализирует ТЗ и генерирует рецензии с честными метками `needs_review`/`confidence`, пакетную обработку до 50 ТЗ, URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм (C4/UML/ERD) с локальным рендером через Kroki, экономическую оценку (CAPEX/OPEX/ROI) с фактическими расходами LLM, RAG-базу знаний с автоиндексацией артефактов и полный аудит LLM-вызовов (включая локальные Ollama/Qwen в air-gapped-режиме). **Стек:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, sentence-transformers + FAISS, 5 LLM-провайдеров, JWT + RBAC (3 роли). 24 модели данных, 146 pytest, 6 Alembic-миграций. E2E-прогон на демо-документах с исправлением 2 багов (экспорты с кириллицей — RFC 5987; таймаут LLM → `LLM_TIMEOUT`). Документация: C4/UML (Mermaid).
-- **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — интерактивный агент для системного аналитика на базе **LangChain + LangGraph**. Поддерживает 7 AI-фреймворков (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), каждый из которых меняет режим работы и набор инструментов. Генерирует SRS/URS и ADR документы с рекомендациями по архитектуре и API. Документация: Mermaid-диаграммы (C4, UML).
-- **[Znaika_Neznaika_bot](https://github.com/MatveiV/Znaika_Neznaika_bot)** — учебный проект двух Telegram-ботов для демонстрации памяти LLM: `Незнайка` (без памяти) и `Знайка` (краткосрочная + долгосрочная память). Реализованы structured output (`theses` + `message`), хранение тезисов в SQLite, команды `/mytheses`, `/reset`, `/resetall`, запуск через единый PowerShell-скрипт и архитектурные Mermaid-диаграммы (C4/UML).
-- **[Resume Site + Telegram Bot](https://github.com/MatveiV/Resume_site_bot)** — сайт-резюме в стиле Apple (Flask, анимации, адаптивность) + Telegram-бот (aiogram 3) с двуязычным интерфейсом RU/EN, скачиванием PDF-резюме с timestamp, фильтрацией проектов и единой базой projects.json.
-- **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram-бот с 5 AI-провайдерами, 8 ролями, генерацией изображений/видео, памятью диалога и подсчётом стоимости в рублях. Документация: 8 Mermaid-диаграмм (C4, BPMN, UML).
-- **[ShortLongMemory Bots](https://github.com/MatveiV/ShortLongMemory_Bots)** — Telegram-боты с короткой (deque) и долгой (RAG + ChromaDB) памятью. FSM-конфигуратор, 3 AI-провайдера, 16+ моделей.
-- **[Local AI Agent Bot](https://github.com/MatveiV/Local_AI_Agent_Bot)** — CLI и Telegram AI-агент с OpenAI function calling и 11 инструментами (поиск, погода, крипта, QR, PDF/DOCX, HTTP, терминал). 3 провайдера, 13+ моделей.
-- **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — MCP-сервер (FastAPI) + Telegram-бот с LLM tool calling. 10 инструментов: каталог товаров (SQLite), калькулятор, CoinGecko, RAWG, LibreTranslate.
-- **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — система автогенерации PDF-отчётов по транскрибациям диалогов с клиентами. LLM → структурированный JSON → Jinja2 → WeasyPrint. 5 LLM-провайдеров, 4 бэкенда генерации изображений.
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI-ассистент системного аналитика: рецензирование ТЗ с честными метками `needs_review`/`confidence`, пакетная обработка до 50 ТЗ, генерация URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм (C4/UML/ERD) с локальным рендером через Kroki, экономическая оценка (CAPEX/OPEX/ROI), RAG-база знаний с автоиндексацией, полный аудит LLM-вызовов (включая локальные Ollama/Qwen в air-gapped-режиме). **Стек:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM-провайдеров, JWT + RBAC, 146 pytest.
+- **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — интерактивный агент на **LangChain + LangGraph** с поддержкой 7 AI-фреймворков (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), каждый меняет режим работы и набор инструментов. Генерирует SRS/URS и ADR документы с рекомендациями по архитектуре и API.
+- **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — интеллектуальный помощник на **LangChain + Pinecone**: полный RAG-цикл, семантический поиск, автоматическая индексация веб-страниц, аналитика активности пользователя.
+- **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — модульный финансовый Telegram-бот на **Haystack 2 + Docling + Pinecone**: локальный OCR/layout через PyTorch, RAG-пайплайн, автоматическое резюме документа, инструменты Alpha Vantage, Finviz Vision, SerperDev.
+- **[AI Client PDF Generator](https://github.com/MatveiV/AI_Client_PDF_Generator)** — автогенерация PDF-отчётов по транскрибациям диалогов с клиентами: LLM → структурированный JSON → Jinja2 → WeasyPrint.
 - **[LangChain Pipeline Generator](https://github.com/MatveiV/LangChain_Pipeline_Generator)** — автогенерация Telegram-ботов и документации (SRS, URS) по текстовому описанию через LLM-цепочки.
 - **[Prompter](https://github.com/MatveiV/Prompter)** — CLI для A/B-тестирования техник промптинга (zero-shot, few-shot, CoT, role-based) с ранжированием и генерацией Markdown/DOCX-отчётов.
-- **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — интеллектуальный помощник на базе **LangChain + Pinecone**. Реализован полный RAG-цикл: семантический поиск по векторной базе, автоматическая индексация веб-страниц (`WebBaseLoader`) и произвольного текста. Включает аналитику активности пользователя, профилирование интересов и мониторинг состояния базы знаний. Поддерживает работу через прокси и содержит детальную архитектурную документацию: Mermaid-диаграммы (C4 L1, Sequence).
-- **[TextEmbeddingPineconeTGBot](https://github.com/MatveiV/TextEmbeddingPineconeTGBot)** — Telegram-бот с долгосрочной векторной памятью на Pinecone. Каждое сообщение сохраняется как эмбеддинг (text-embedding-3-small, dim=1536); перед каждым ответом выполняется семантический поиск топ-5 воспоминаний через query_vector и они подставляются в системный промпт GPT. Автосохранение по ключевым словам, ручная команда /save, очистка памяти /forget. Модуль PineconeVectorClient инкапсулирует upsert/query/delete. Документация: 6 Mermaid-диаграмм (C4 L1/L2/L3, Sequence ×2, Class, Flowchart).
-- **[PineconeManager_with_CosineSimilarity](https://github.com/MatveiV/PineconeManager_with_CosineSimilarity)** — Telegram-бот с интеллектуальной долговременной памятью. Реализован алгоритм косинусного сходства (Cosine Similarity) для автоматической фильтрации дубликатов и умного обновления векторов (upsert). Очистка метаданных от служебного шума, поддержка OpenAI `text-embedding-3-small` через прокси, детальное логирование. Документация: Mermaid (C4, Sequence).
-- **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — модульный финансовый Telegram-бот v2 на **Haystack 2 + Docling + Pinecone**. Локальный OCR/layout через **PyTorch** (DoclingConverter, HybridChunker + tiktoken), RAG-пайплайн (embed → PineconeRetriever → ChatPromptBuilder → Agent → AnswerBuilder), два Pinecone-namespace (`documents` + `chat-history`), автоматическое резюме документа (map-reduce через LLM), инструменты агента: Alpha Vantage, Finviz Vision, SerperDev. Документация: C4 + UML Sequence (Mermaid).
-- **[PromptingAIbot & three_ai_comparison_bot](https://github.com/MatveiV/PromptingAIbot)** — Telegram-бот и CLI для сравнения ответов AI-моделей (GPT, Claude, Gemini, DeepSeek, GLM) через единый OpenAI-совместимый клиент.
-- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — умный командный Telegram-бот на базе **Haystack 2.x**, **Pinecone** и **OpenAI** (через proxyapi.ru). Понимает текст, голосовые сообщения и документы. Сохраняет историю команды в векторную БД, отвечает на вопросы по контексту переписки через RAG при упоминании `@team_assistant_text_audio_bot`. Документация: Mermaid-диаграммы (C4, Sequence).
-
-### Инфраструктура и бэкенд
-
-- **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — рефакторинг Python-кода (устранение SQL-инъекций, утечек соединений, гонок потоков, небезопасного хранения паролей) с параллельной реализацией того же REST API на Go. Два Docker-образа на Docker Hub, docker-compose для совместного запуска. Документация: 7 Mermaid-диаграмм (C4 L1/L2/L3, UML классов, Sequence ×3, State, Deployment).
-- **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — стек централизованного логирования (Loki + Grafana) с Docker Compose и bash-скриптами автоустановки.
-- **[CoinParser](https://github.com/MatveiV/CoinParser)** — парсер Telegram-канала с фильтрацией крипто-символов, интеграцией Google Sheets API и экспортом в XLSX.
-- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — CRM-система с двумя интерфейсами: Tkinter Desktop GUI для локальной работы и FastAPI REST API для интеграций. SQLite для хранения данных, экспорт отчётов в Google Sheets с предварительно рассчитанной аналитикой (статусы, суммы, приоритеты). Docker-контейнеризация бэкенда, документирование: C4, UML, ERD, Sequence диаграммы (Mermaid).
-- **[Orders CRM](https://github.com/MatveiV/OrdersCRM)** — премиальная CRM-система для управления заявками тёплых клиентов с интеллектуальным скорингом и сбором поведенческих метрик. **Production:** orderscrm.ru (самоподписанный HTTPS). **Стек:** FastAPI + PostgreSQL 16 (asyncpg) + Nginx + Docker Compose + Watchtower. **Фронтенд:** Vite + Vanilla JS (клиентский лендинг + SPA-админка). **Особенности:** JWT-авторизация (access/refresh, bcrypt), интеллектуальный скоринг заявок (8 критериев, 100 баллов, hot/warm/cold), авто-создание Application из Lead, система поведенческих метрик (heatmap, топ кнопок, временные срезы), CRUD услуг, production-безопасность (DISABLE_DOCS, rate-limit 10r/s, security headers, только порты 80/443), C4 + UML документация (Mermaid).
 
 ### ML / Финансы
 
-- **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — платформа Copy Trading для торговых роботов MT4/MT5. **Бэкенд:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Фронтенд:** React 19 + TypeScript + Vite + shadcn/ui + wouter + TanStack Query + recharts. Трёхуровневая система комиссий (Performance + Subscription + Entry fee + Agent Reward), пагинация, deploy pipeline (upload/URL/launch), SRS v4.0 с диаграммами BPMN, Sequence, C4, State (Mermaid). Документация API: 15 примеров запросов/ответов.
+- **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — платформа Copy Trading для торговых роботов MT4/MT5. **Бэкенд:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Фронтенд:** React 19 + TypeScript + Vite + shadcn/ui. Трёхуровневая система комиссий, deploy pipeline, SRS v4.0 (BPMN, Sequence, C4, State).
 - **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — ML в финансах: бэктестинг стратегий, генерация признаков (EMA, RSI, MACD), классификация, прогнозирование временных рядов (LSTM, TFT).
+
+### Инфраструктура и бэкенд
+
+- **[Orders CRM](https://github.com/MatveiV/OrdersCRM)** — премиальная CRM-система для управления заявками с интеллектуальным скорингом. **Production:** orderscrm.ru. **Стек:** FastAPI + PostgreSQL 16 (asyncpg) + Nginx + Docker Compose + Watchtower. JWT-авторизация, скоринг заявок (8 критериев), поведенческие метрики, production-безопасность (rate-limit, security headers).
+- **[MiniCRM](https://github.com/MatveiV/MiniCRM)** — CRM-система с двумя интерфейсами: Tkinter Desktop GUI и FastAPI REST API. SQLite, экспорт отчётов в Google Sheets, Docker-контейнеризация.
+- **[Refactoring_MV](https://github.com/MatveiV/Refactoring_mv)** — рефакторинг Python-кода (устранение SQL-инъекций, утечек соединений, гонок потоков) с параллельной реализацией того же REST API на Go. Два Docker-образа на Docker Hub.
+- **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — стек централизованного логирования (Loki + Grafana) с Docker Compose и bash-скриптами автоустановки.
+- **[CoinParser](https://github.com/MatveiV/CoinParser)** — парсер Telegram-канала с фильтрацией крипто-символов, интеграцией Google Sheets API и экспортом в XLSX.
+
+### Боты (актуальные для целевых вакансий)
+
+- **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram-бот с 5 AI-провайдерами, 8 ролями, генерацией изображений/видео, памятью диалога и подсчётом стоимости в рублях.
+- **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — MCP-сервер (FastAPI) + Telegram-бот с LLM tool calling. 10 инструментов: каталог товаров, калькулятор, CoinGecko, RAWG.
+- **[Team Assistant Telegram Bot](https://github.com/MatveiV/Team-Assistant-Telegram-Bot)** — умный командный Telegram-бот на **Haystack 2.x + Pinecone + OpenAI**: текст, голосовые сообщения и документы, RAG-ответы по контексту переписки.
 
 ---
 
 ## Опыт работы
 
-### 07.2024 — н.в. · ИП · Системный и бизнес-аналитик, vibe-developer, quantitative researcher
+### 07.2024 — н.в. · ИП · Системный/бизнес-аналитик, AI/LLM-разработчик, quantitative researcher
 
-Проектирование мультипровайдерной AI-архитектуры, разработка FSM-конфигураторов, реализация RAG-пайплайнов, рефакторинг Python-кода, реализация REST API на Go, сборка multi-stage Docker-образов, написание архитектурной документации с Mermaid/PlantUML-диаграммами (C4, BPMN, UML).
+*ИП зарегистрировано с апреля 2023 года; с 2024 года — фокус на AI/LLM-разработке.*
+
+Проектирование мультипровайдерной AI-архитектуры, разработка FSM-конфигураторов, реализация RAG-пайплайнов, рефакторинг Python-кода, реализация REST API на Go, сборка multi-stage Docker-образов.
 
 **Ключевые достижения:**
-- Единая OpenAI-совместимая архитектура для 5 разнородных провайдеров без изменения кода бота.
-- AI-агент с 11 инструментами: два независимых UI (CLI и Telegram) на едином ядре без дублирования кода.
-- Полный порт Flask-сервиса на Go: в 20 раз больше одновременных запросов при образе 10 МБ против 150 МБ.
-- OpenAPI 3.1 спецификация для двух серверов с reusable-схемами и примерами всех ответов.
-- Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
-- Разработка RAG-агента с поддержкой динамической индексации знаний из веба и текстовых фрагментов, интегрированного с аналитической подсистемой профилирования пользователей.
-- Реализовал систему «умной» векторной памяти с фильтрацией дубликатов на основе косинусного сходства, что позволило сократить объем хранимых данных и повысить релевантность поиска.
-- Командный Telegram-бот с Haystack 2.x + Pinecone: автоматическая индексация сообщений, голосовых сообщений (Whisper) и документов (Docling), RAG-ответы на вопросы по контексту чата с упоминанием `@team_assistant_text_audio_bot`.
-- Разработал модульный RAG-бот с локальным OCR (Docling + PyTorch): полный пайплайн от загрузки документа до ответа на вопрос по его содержимому с автоматическим резюме и векторным поиском в Pinecone.
- - Полнофункциональная CRM на Python: Tkinter GUI + FastAPI REST API + Google Sheets/Drive интеграция + Docker-контейнеризация. Документация с Mermaid-диаграммами (C4, UML, ERD, Sequence).
-- Orders CRM — production-ready CRM с FastAPI + PostgreSQL 16 + Nginx: интеллектуальный скоринг (8 критериев), сбор поведенческих метрик (heatmap, временные срезы), JWT-авторизация, production-безопасность (DISABLE_DOCS, rate-limit, HSTS), 52 файла, развёрнута на удалённом сервере 185.87.48.13.
-- Полноценная Copy Trading платформа: FastAPI (25+ endpoints) + standalone React SPA (shadcn/ui, wouter, TanStack Query, recharts). Трёхуровневая система комиссий с Agent Reward, пагинированная история сделок, deploy pipeline для MT4/MT5. SRS v4.0: BPMN, C4, Sequence, State диаграммы (Mermaid).
-- **Analyst-Architect-AI** — полноценная платформа AI-аналитика (FastAPI + React + Ollama): AI-рецензии ТЗ с честными метками `needs_review`/`confidence`, batch-обработка до 50 ТЗ, генерация URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм с локальным рендером (Kroki), экономический модуль CAPEX/OPEX/ROI с фактическими расходами LLM, RAG-база знаний с автоиндексацией артефактов, аудит всех LLM-вызовов (локально через Ollama/Qwen — данные не покидают контур). 146 автотестов + полный E2E-прогон на демо-документах (CRM, торговая платформа, страхование); найдены и исправлены 2 бага: 500 на экспортах с кириллицей в названии (RFC 5987 `Content-Disposition`) и таймаут LLM-вызовов на медленной локальной модели (новая настройка `LLM_TIMEOUT`).
 
----
+- Единая OpenAI-совместимая архитектура для 5 разнородных провайдеров без изменения кода бота.
+- AI-агент с 11 инструментами и MCP-сервером: два независимых UI (CLI и Telegram) на едином ядре.
+- Полный порт Flask-сервиса на Go: в 20 раз больше одновременных запросов при образе 10 МБ против 150 МБ.
+- Analyst-Architect-AI — полноценная платформа AI-аналитика (146 автотестов, полный E2E-прогон, найдены и исправлены 2 критических бага).
+- Orders CRM и TradingRobotMarketplace — доведены до production/SRS v4.0.
+- Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
 
 ### 04.2025 — 11.2025 · Techcoredev.ru (АО «Инновационные технологии») · Системный аналитик
 
-**Проект:** Система управления страховыми продуктами.
+**Проект:** Система управления страховыми продуктами. Полный цикл создания спецификаций, проектирование архитектурных решений (BPMN, ERD, UML, C4), реверс-инжиниринг legacy-системы с применением ИИ.
 
-Полный цикл создания спецификаций. Проектирование архитектурных решений (BPMN, ERD, UML, C4). Реверс-инжиниринг legacy-системы с применением ИИ для анализа кода и бизнес-логики.
-
-**Достижение:** Ускорил этап проектирования за счёт внедрения ИИ для генерации типовых фрагментов документации и анализа legacy-кода.
+**Достижение:** ускорил этап проектирования за счёт внедрения ИИ для генерации типовых фрагментов документации и анализа legacy-кода.
 
 *Node.js, DBeaver, MS SQL Server, Confluence, Cursor, Windsurf, Draw.io, PlantUML, Figma.*
 
----
-
 ### 04.2021 — 03.2024 · Raccoonsoft.ru & Devexperts.com · Ведущий аналитик
 
-**Проект:** Мобильная платформа Tastyworks iPad для торговли акциями, деривативами (опционы, фьючерсы), облигациями, форекс и криптовалютами ([tastytrade.com](https://tastytrade.com)).
+**Проект:** мобильная платформа Tastyworks iPad для торговли акциями, деривативами, облигациями, форекс и криптовалютами (tastytrade.com). Выявление и моделирование требований в user stories и системных спецификациях. Реверс-инжиниринг мобильного, толстого и тонкого клиентов.
 
-Выявление и моделирование требований в user stories и системных спецификациях для iPad-клиента. Участие в проектировании UI/UX, интеграций и общей архитектуры. Реверс-инжиниринг мобильной версии и толстого/тонкого клиентов. Связующее звено между бизнесом и командой разработки.
+**Достижение:** успешный вывод продукта на рынок; сократил количество итераций на этапе разработки благодаря детальным требованиям в Jira.
 
-**Достижение:** Успешный вывод продукта на рынок. Сократил количество итераций на этапе разработки благодаря детальным требованиям, сформированным в Jira.
-
-*JIRA, GitHub, Figma, Java, MindManager.*
-
----
+*JIRA, GitHub, Figma, Java, MindManager, Slack.*
 
 ### 12.2013 — 04.2025 · ООО «ЛАНИТ-ТЕРКОМ» · Ведущий аналитик
 
-**Проекты:**
-
-- **Услуги ЖКХ для ВЦКП-ЕИРЦ** (квитанции за услуги ЖКХ в Санкт-Петербурге) и ГИС ЖКХ. Выявление и моделирование требований, описание интеграций и ИТ-инфраструктуры, реверс-инжиниринг legacy-систем. Методологии: DFD/IDEF0/BPMN/EPC/ARIS/C4. *Oracle, PostgreSQL, 1C, PowerDesigner, ARIS, Bizagi, JIRA, Confluence, Enterprise Architect.*
-- **МЭШ для ДИТ г. Москвы** (КИС ГУСОЭВ, управление олимпиадами школьников). Анализ БФТ, создание ТЗ/ЧТЗ/ППИ, UML Sequence-диаграммы, тестирование интеграций. *PostgreSQL, Java, Kafka, JIRA, Confluence, Grafana, Postman.*
-- **ВЕГА ФЭМ и «Цифровой двойник сейсморазведки»** для ПАО «Газпром нефть». Адаптация систем принятия финансово-экономических и геологических решений. *ARIS, MSSQL Server, 1С.*
-- **Раковый регистр в ЕМИАС** для ДИТ г. Москвы. Реверс-инжиниринг legacy-системы, создание спецификаций BPMN/UML.
-- **Toyota** для ООО «Тойота Мотор Россия». Vision и ТЗ для складской подсистемы и подсистемы контроля качества.
-- **AREA9** для Area9 Lyceum. Адаптация международной SaaS-платформы адаптивного обучения, локализация UI и контента.
-- **Presale-оценки:** ETWeb Enterprise, ГИС ТЭК СПб, ИС для Росатом, ИС «Управление трафиком» для YOTA, ИС «Запасы» для Роснедра и др.
-
----
+- **Услуги ЖКХ для ВЦКП-ЕИРЦ** (Санкт-Петербург) и **ГИС ЖКХ**. Выявление требований, реверс-инжиниринг legacy (DFD/IDEF0/BPMN/EPC/ARIS/C4). *Oracle, PostgreSQL, 1C, PowerDesigner, ARIS, Bizagi, JIRA, Confluence, Enterprise Architect.*
+- **МЭШ для ДИТ г. Москвы** (управление олимпиадами школьников). Анализ БФТ, ТЗ/ЧТЗ/ППИ, UML Sequence-диаграммы. *PostgreSQL, Java, Kafka, JIRA, Confluence, Grafana, Postman.*
+- **ВЕГА ФЭМ и «Цифровой двойник сейсморазведки»** для ПАО «Газпром нефть». *ARIS, MSSQL Server, 1С.*
+- **Раковый регистр** в ЕМИАС для ДИТ г. Москвы.
+- **Toyota** (ООО «Тойота Мотор Россия») — Vision и ТЗ для складской подсистемы и подсистемы контроля качества.
+- **AREA9** для Area9 Lyceum — адаптация SaaS-платформы адаптивного обучения, локализация UI и контента.
+- **Presale-оценки:** ETWeb Enterprise, ГИС ТЭК СПб, ИС для Росатом, ИС «Управление трафиком» (YOTA), ИС «Запасы» (Роснедра) и др.
 
 ### 05.2013 — 12.2013 · Deutsche Telekom IT Solutions · Старший бизнес-аналитик
 
-**Проект:** De-mail — нотариальный E-mail.
+**Проект:** De-mail — нотариальный E-mail. Анализ функциональных требований, описания бизнес-процессов, спецификаций и диаграмм (DFD, ERM, BPMN, UML).
 
-Анализ функциональных требований, создание описаний бизнес-процессов, спецификаций и диаграмм (DFD, ERM, BPMN, UML). Подготовленный пакет документации (SRS, модели процессов) стал основой для успешного прохождения предварительного проектирования.
-
-*Polarion, JIRA, Confluence, Enterprise Architect.*
-
----
+*Polarion, JIRA, Confluence, Enterprise Architect, MindManager.*
 
 ### 05.2012 — 03.2013 · TKB BNP Paribas Investment Partners · Старший аналитик бизнес-процессов
 
-**Проекты:** Model portfolio, Структурированные продукты, Value-at-risk, CAPM, ATP, МТС-ATS-Robot, Data Quality, Data mining.
-
-Создание спецификаций для Front-Middle-Back Office и Risk-management. Анализ и формализация математических моделей расчёта доходности и риска. Проектирование потоков данных от биржевых фидов до расчётного ядра и витрин отчётности.
+**Проекты:** Model portfolio, структурированные продукты, Value-at-risk, CAPM, ATP, МТС-ATS-Robot, Data Quality, Data mining.
 
 *Excel, yEd, QUIK, MetaTrader 4/5 (+MQL), 1C, MS SQL.*
 
----
-
 ### 08.2007 — 05.2012 · Devexperts.com · Бизнес/системный/финансовый аналитик
 
-**Проекты:** АТС, FX и бинарные опционы, технический анализ (Charting), дилинг, мобильные клиенты, интеграция по FIX, риск-менеджмент, бэк-офис. Торговые платформы: ThinkOrSwim, GFT Dealbook 360, DXtrade.
-
-Сбор и анализ требований (на английском), проектирование и управление спецификациями для финансовых инструментов (опционы, фьючерсы, FX, ставки bet). Анализ и проектирование UI/UX. Проектирование трейдингового workflow, маржинальных расчётов и торговых отчётов. Адаптация платформы под требования брокеров и регуляторов.
+**Проекты:** АТС, FX и бинарные опционы, технический анализ, дилинг, мобильные клиенты, интеграция по FIX, риск-менеджмент, бэк-офис. Платформы: ThinkOrSwim, GFT Dealbook 360, DXtrade.
 
 *DOORS, Polarion, JIRA, Confluence, Enterprise Architect, FIX протокол.*
 
----
-
 ### 02.2006 — 08.2007 · Visual Trading Systems LLC · Бизнес-аналитик
 
-**Проект:** Модули АТС и Backtesting Engine для торговой платформы VT Trader (Capital Market Services FX).
-
-Сбор и анализ требований (на английском). Разработка АТС для VT Trader. Проектирование модуля Backtesting Engine.
+**Проект:** модули АТС и Backtesting Engine для торговой платформы VT Trader (Capital Market Services FX).
 
 *VT Trader, MetaTrader (+MQL), MetaStock, Tradestation, Wealth-Lab.*
 
@@ -160,26 +126,24 @@
 
 ## Технологии
 
-| Категория | Стек |
-|-----------|------|
-| Языки | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM | OpenAI API, Claude, Gemini, DeepSeek, GLM (Z.AI), Llama, Qwen, Kimi; function calling / tool calling; MCP; промпт-инжиниринг; Cerebras WSE; HuggingFace; Cosine Similarity; OpenAI text-embedding-3-small; **Docling OCR**; RAG-пайплайны; **FAISS**, sentence-transformers |
-| Генерация медиа | DALL·E 2/3, GPT-Image-1, FLUX.1, Kling, LTX, Sora/Sora-2, CogVideoX-3, Veo 3/3.1, Imagen 4, Pollinations.ai |
-| Фреймворки / UI | FastAPI, Flask, React 19, Vite, shadcn/ui, wouter, TanStack Query, recharts, react-hook-form + zod, Tailwind CSS, Tkinter, aiogram 3, pyTelegramBotAPI, python-telegram-bot, LangChain, **Haystack 2**, openai SDK, aiohttp, ChromaDB, Pinecone, Pydantic, Jinja2, WeasyPrint, python-dotenv, **SQLAlchemy (async + asyncpg)**, **Alembic**, **uvicorn**, pytest, python-docx, **CodeMirror**, **Nginx** |
-| Данные / API | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, openpyxl, gspread, yfinance, Google Sheets API, Google Drive API |
-| ML | scikit-learn, LightGBM, **PyTorch**, PyTorch Lightning, pytorch-forecasting, optuna, shap, backtesting |
-| Инфраструктура | Docker, Docker Compose, Grafana Loki, GitHub Actions |
-| BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, Sequence, State, Class, ERD, Flowchart), **Kroki (локальный рендер диаграмм)** |
-| Торговые платформы | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
-| Инструменты | Git/GitHub, Jupyter, LM Studio, Ollama, Cursor, Kiro, Visual Paradigm |
-| Стандарты | PMBoK, BABOK, ГОСТ 34, IEEE 830, ISO/IEC/IEEE 29148 |
+| Категория           | Стек |
+| ------------------- | ---- |
+| Языки               | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
+| AI / LLM            | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; промпт-инжиниринг; RAG; FAISS, sentence-transformers |
+| Фреймворки / UI     | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, pytest, Nginx |
+| Данные / API        | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, Google Sheets API, Google Drive API |
+| ML                  | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
+| Инфраструктура      | Docker, Docker Compose, Grafana Loki, GitHub Actions |
+| BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, UML), Kroki |
+| Торговые платформы  | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
+| Стандарты           | PMBoK, BABOK, ГОСТ 34, IEEE 830, ISO/IEC/IEEE 29148 |
 
 ---
 
 ## Образование
 
-| Годы | Учебное заведение | Степень / специальность |
-|------|-------------------|------------------------|
+| Годы      | Учебное заведение | Степень / специальность |
+| --------- | ------------------ | ------------------------ |
 | 1995–1998 | СПбГУ, аспирантура, факультет прикладной математики и процессов управления | К.ф.-м.н., Математическая кибернетика. Тема: «Квазисовершенные принципы оптимальности в классических кооперативных играх» |
 | 1990–1995 | СПбГУ, факультет прикладной математики и процессов управления | Математик, Прикладная математика. Тема: «Теории игр: модели принятия решений в экономике» |
 | 1999–2002 | СПбГУ (экономический факультет) и Международный банковский институт (IBI) | Экономист, Финансы и кредит. Тема: «Применение метода реальных опционов для оценки долгосрочных инвестиционных проектов» |
@@ -195,8 +159,7 @@
 - 2025 — ML в финансовом анализе (OTUS.ru)
 - 2020 — Моделирование в ARIS (Luxoft-training)
 - 2009 — Школа опционов (инвестиционная компания Eltra)
-- 2005 — Курс финансов и международного бизнеса, Aurhus School of Business, Дания
-- 2005 — TOEFL, Aurhus School of Business, Дания
+- 2005 — Курс финансов и международного бизнеса, Aarhus School of Business, Дания (включая TOEFL)
 - 1995 — Годичная программа по макро- и микроэкономике и финансам, Европейский университет в СПб и ЭМИАН
 
 ---
