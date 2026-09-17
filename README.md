@@ -26,7 +26,7 @@
 
 ### AI / LLM
 
-- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — AI-ассистент системного аналитика: рецензирование ТЗ с честными метками `needs_review`/`confidence`, пакетная обработка до 50 ТЗ, генерация URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм (C4/UML/ERD) с локальным рендером через Kroki, экономическая оценка (CAPEX/OPEX/ROI), RAG-база знаний с автоиндексацией, полный аудит LLM-вызовов (включая локальные Ollama/Qwen в air-gapped-режиме). **Стек:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM-провайдеров, JWT + RBAC, 146 pytest.
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — выпускной проект курса «Профессия вайб-кодер» (2026): платформа AI-ассистента системного аналитика. Рецензирование ТЗ с честными метками `needs_review`/`confidence`, пакетная обработка до 50 ТЗ, генерация URS/SRS/ADR по ГОСТ 34.602-2020, 8 типов диаграмм (C4/UML/ERD) с локальным рендером через Kroki, база знаний с RAG и автоиндексацией, каталог рисков и уроки (Lessons Learned), 5 типов памяти, экономическая оценка (CAPEX/OPEX/ROI) с экспортом в DOCX, полный аудит LLM-вызовов (включая локальные Ollama/Qwen в air-gapped-режиме), JWT + RBAC, Docker Compose (backend + frontend + Kroki + Ollama), **160 pytest-тестов** и полный **E2E-прогон на локальном LLM (Ollama `qwen2.5:7b`)** с подтверждением критериев приёмки. **Стек:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM-провайдеров.
 - **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — интерактивный агент на **LangChain + LangGraph** с поддержкой 7 AI-фреймворков (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), каждый меняет режим работы и набор инструментов. Генерирует SRS/URS и ADR документы с рекомендациями по архитектуре и API.
 - **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — интеллектуальный помощник на **LangChain + Pinecone**: полный RAG-цикл, семантический поиск, автоматическая индексация веб-страниц, аналитика активности пользователя.
 - **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — модульный финансовый Telegram-бот на **Haystack 2 + Docling + Pinecone**: локальный OCR/layout через PyTorch, RAG-пайплайн, автоматическое резюме документа, инструменты Alpha Vantage, Finviz Vision, SerperDev.
@@ -68,7 +68,7 @@
 - Единая OpenAI-совместимая архитектура для 5 разнородных провайдеров без изменения кода бота.
 - AI-агент с 11 инструментами и MCP-сервером: два независимых UI (CLI и Telegram) на едином ядре.
 - Полный порт Flask-сервиса на Go: в 20 раз больше одновременных запросов при образе 10 МБ против 150 МБ.
-- Analyst-Architect-AI — полноценная платформа AI-аналитика (146 автотестов, полный E2E-прогон, найдены и исправлены 2 критических бага).
+- Analyst-Architect-AI — выпускная платформа AI-аналитика: **160 автотестов**, полный **E2E-прогон на локальном LLM** (Ollama `qwen2.5:7b` — 10 ТЗ отрецензировано, 10 вопросов по базе знаний с источниками), найдены и исправлены 2 критических бага (JSON-режим Ollama, таймауты), собран полный комплект артефактов сдачи (сценарии демо и защиты, скриншоты-доказательства).
 - Orders CRM и TradingRobotMarketplace — доведены до production/SRS v4.0.
 - Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
 
@@ -129,8 +129,8 @@
 | Категория           | Стек |
 | ------------------- | ---- |
 | Языки               | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM            | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; промпт-инжиниринг; RAG; FAISS, sentence-transformers |
-| Фреймворки / UI     | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, pytest, Nginx |
+| AI / LLM            | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; промпт-инжиниринг; RAG; FAISS, sentence-transformers; локальный деплой моделей (Ollama) |
+| Фреймворки / UI     | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Nginx |
 | Данные / API        | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, Google Sheets API, Google Drive API |
 | ML                  | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
 | Инфраструктура      | Docker, Docker Compose, Grafana Loki, GitHub Actions |

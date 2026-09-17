@@ -26,7 +26,7 @@ I bridge business and development: gathering requirements, designing architectur
 
 ### AI / LLM 
 
-- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — an AI assistant for systems analysts: spec review with honest `needs_review`/`confidence` labels, batch processing of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types (C4/UML/ERD) rendered locally via Kroki, economic evaluation (CAPEX/OPEX/ROI), a RAG knowledge base with auto-indexing, full LLM-call auditing (including local Ollama/Qwen in air-gapped mode). **Stack:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM providers, JWT + RBAC, 146 pytest tests.
+- **[Analyst-Architect-AI](https://github.com/MatveiV/Analyst-Architect-AI)** — a graduation project of the "Vibe-Coding Profession" course (2026): an AI-assistant platform for systems analysts. Spec review with honest `needs_review`/`confidence` labels, batch processing of up to 50 specs, URS/SRS/ADR generation per GOST 34.602-2020, 8 diagram types (C4/UML/ERD) rendered locally via Kroki, a knowledge base with RAG and auto-indexing, a risk catalog and Lessons Learned, 5 memory types, economic evaluation (CAPEX/OPEX/ROI) with DOCX export, full LLM-call auditing (including local Ollama/Qwen in air-gapped mode), JWT + RBAC, Docker Compose (backend + frontend + Kroki + Ollama), **160 pytest tests** and a full **E2E run on a local LLM (Ollama `qwen2.5:7b`)** confirming acceptance criteria. **Stack:** FastAPI + SQLAlchemy (async) + SQLite/PostgreSQL, React 18 + Vite + TypeScript + Tailwind, 5 LLM providers.
 - **[Agent-SystemAnalyst_MemoryFrameworks](https://github.com/MatveiV/Agent-SystemAnalyst_MemoryFrameworks)** — an interactive agent on **LangChain + LangGraph** supporting 7 AI frameworks (LlamaIndex, Haystack, Semantic Kernel, CrewAI, AutoGen, DSPy), each changing the working mode and toolset. Generates SRS/URS and ADR documents with architecture and API recommendations.
 - **[RAG-Agent](https://github.com/MatveiV/RAG-Agent)** — an intelligent assistant on **LangChain + Pinecone**: a full RAG cycle, semantic search, automatic web-page indexing, user-activity analytics.
 - **[FinAnalyst-Haystack-Docling-Agent](https://github.com/MatveiV/FinAnalyst-Haystack-Docling-Agent)** — a modular financial Telegram bot on **Haystack 2 + Docling + Pinecone**: local OCR/layout via PyTorch, a RAG pipeline, automatic document summarization, Alpha Vantage, Finviz Vision and SerperDev tools.
@@ -68,7 +68,7 @@ Multi-provider AI architecture design, FSM configurator development, RAG pipelin
 - A unified OpenAI-compatible architecture for 5 different providers with no bot code changes.
 - An AI agent with 11 tools and an MCP server: two independent UIs (CLI and Telegram) on one core.
 - A full port of a Flask service to Go: 20x more concurrent requests with a 10 MB image vs. 150 MB.
-- Analyst-Architect-AI — a full-fledged AI-analyst platform (146 automated tests, a full E2E run, 2 critical bugs found and fixed).
+- Analyst-Architect-AI — a graduation-grade AI-analyst platform: **160 automated tests**, a full **E2E run on a local LLM** (Ollama `qwen2.5:7b` — 10 specs reviewed, 10 knowledge-base questions answered with sources), 2 critical bugs found and fixed (Ollama JSON mode, timeouts), and a complete submission artifact set (demo/defense scripts, evidence screenshots).
 - Orders CRM and TradingRobotMarketplace — taken to production / SRS v4.0.
 - A set of ML strategies for financial time series with confirmed results on historical data.
 
@@ -129,8 +129,8 @@ Multi-provider AI architecture design, FSM configurator development, RAG pipelin
 | Category            | Stack |
 | ------------------- | ----- |
 | Languages            | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
-| AI / LLM             | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; prompt engineering; RAG; FAISS, sentence-transformers |
-| Frameworks / UI      | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, pytest, Nginx |
+| AI / LLM             | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; prompt engineering; RAG; FAISS, sentence-transformers; local model serving (Ollama) |
+| Frameworks / UI      | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Nginx |
 | Data / API           | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, Google Sheets API, Google Drive API |
 | ML                   | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
 | Infrastructure       | Docker, Docker Compose, Grafana Loki, GitHub Actions |
