@@ -47,7 +47,7 @@ I bridge business and development: gathering requirements, designing architectur
 - **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — a centralized logging stack (Loki + Grafana) with Docker Compose and bash auto-install scripts.
 - **[CoinParser](https://github.com/MatveiV/CoinParser)** — a Telegram channel parser with crypto-symbol filtering, Google Sheets API integration and XLSX export.
 
-### Bots (most relevant for target roles)
+### Bots
 
 - **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — a Telegram bot with 5 AI providers, 8 roles, image/video generation, dialogue memory and RUB cost tracking.
 - **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — an MCP server (FastAPI) + Telegram bot with LLM tool calling. 10 tools: product catalog, calculator, CoinGecko, RAWG.

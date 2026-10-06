@@ -47,7 +47,7 @@
 - **[Loki-Grafana](https://github.com/MatveiV/Loki_Grafana)** — стек централизованного логирования (Loki + Grafana) с Docker Compose и bash-скриптами автоустановки.
 - **[CoinParser](https://github.com/MatveiV/CoinParser)** — парсер Telegram-канала с фильтрацией крипто-символов, интеграцией Google Sheets API и экспортом в XLSX.
 
-### Боты (актуальные для целевых вакансий)
+### Боты
 
 - **[MultiTools AI Agent Bot](https://github.com/MatveiV/MultiTools_AI_Agent_Bot)** — Telegram-бот с 5 AI-провайдерами, 8 ролями, генерацией изображений/видео, памятью диалога и подсчётом стоимости в рублях.
 - **[Product MCP Bot](https://github.com/MatveiV/Product_MCP_Bot)** — MCP-сервер (FastAPI) + Telegram-бот с LLM tool calling. 10 инструментов: каталог товаров, калькулятор, CoinGecko, RAWG.
