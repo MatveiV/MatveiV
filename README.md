@@ -37,7 +37,7 @@
 ### ML / Финансы
 
 - **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — платформа Copy Trading для торговых роботов MT4/MT5. **Бэкенд:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Фронтенд:** React 19 + TypeScript + Vite + shadcn/ui. Трёхуровневая система комиссий, deploy pipeline, SRS v4.0 (BPMN, Sequence, C4, State).
-- **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — ML в финансах: бэктестинг стратегий, генерация признаков (EMA, RSI, MACD), классификация, прогнозирование временных рядов (LSTM, TFT).
+- **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — количественные исследования в алготрейдинге: исходные ноутбуки курса `HW1`–`HW5` и пересмотренная секция `HW6`–`HW8`, закоммиченная с сохранённым выводом исполненного кода на двух языках (EN + русские версии). `HW6` — ARIMA/ETS/state-space против нулевых бенчмарков (константа и случайное блуждание), тест Diebold–Mariano, калибровка интервалов; `HW7` — дисциплина валидации: purged K-fold, walk-forward, CPCV с эмбарго, автоматический детектор look-ahead-признака, block-bootstrap интервалы, PSR/DSR/MinTRL; `HW8` — гонка LightGBM/XGBoost/CatBoost/HGB/логистической регрессии на одном протоколе с лидербордом MLflow, восстановленным из SQLite-хранилища. Общая библиотека `mlfin_core.py` и **70 pytest-тестов** на её инварианты; данные закреплены снимком `data/SPY.csv` и константой `DATA_END`, поэтому цифры воспроизводятся при любом перезапуске. Результат честно отрицательный — **0 / 6** fitted-моделей значимо лучше константы и **0 / 5** моделей обходят покупку индекса. **Стек:** pandas, scikit-learn, statsmodels, LightGBM, XGBoost, CatBoost, MLflow, yfinance, nbclient, pytest.
 
 ### Инфраструктура и бэкенд
 
@@ -70,7 +70,7 @@
 - Полный порт Flask-сервиса на Go: в 20 раз больше одновременных запросов при образе 10 МБ против 150 МБ.
 - Analyst-Architect-AI — полноценная платформа AI-аналитика: **160 автотестов**, полный **E2E-прогон на локальном LLM** (Ollama `qwen2.5:7b` — 10 ТЗ отрецензировано, 10 вопросов по базе знаний с источниками), найдены и исправлены 2 критических бага (JSON-режим Ollama, таймауты), разработаны сценарии демонстрации и комплект документации.
 - Orders CRM и TradingRobotMarketplace — доведены до production/SRS v4.0.
-- Набор ML-стратегий для финансовых временных рядов с подтверждённым результатом на исторических данных.
+- ML_Fin_Notebooks — количественный research по алготрейдингу: нулевые бенчмарки, финальное OOS-окно касается ровно один раз, каждое заявленное преимущество сообщается с интервалом неопределённости; 6 выполненных ноутбуков (EN/RU), 70 pytest-тестов, воспроизводимый срез данных SPY.
 
 ### 04.2025 — 11.2025 · Techcoredev.ru (АО «Инновационные технологии») · Системный аналитик
 
@@ -130,9 +130,9 @@
 | ------------------- | ---- |
 | Языки               | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
 | AI / LLM            | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; промпт-инжиниринг; RAG; FAISS, sentence-transformers; локальный деплой моделей (Ollama) |
-| Фреймворки / UI     | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Nginx |
-| Данные / API        | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, Google Sheets API, Google Drive API |
-| ML                  | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
+| Фреймворки / UI     | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Jupyter (nbclient), Nginx |
+| Данные / API        | SQLite, PostgreSQL, Oracle, MS SQL Server, 1С, pandas, yfinance, Google Sheets API, Google Drive API |
+| ML                  | scikit-learn, LightGBM, XGBoost, CatBoost, statsmodels, MLflow, PyTorch, PyTorch Lightning, optuna, backtesting |
 | Инфраструктура      | Docker, Docker Compose, Grafana Loki, GitHub Actions |
 | BA / SA инструменты | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, UML), Kroki |
 | Торговые платформы  | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |

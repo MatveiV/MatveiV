@@ -37,7 +37,7 @@ I bridge business and development: gathering requirements, designing architectur
 ### ML / Finance
 
 - **[TradingRobotMarketplace](https://github.com/MatveiV/TradingRobotMarketplace)** — a Copy Trading platform for MT4/MT5 trading robots. **Backend:** FastAPI + SQLAlchemy + Pydantic v2 (25+ endpoints). **Frontend:** React 19 + TypeScript + Vite + shadcn/ui. A three-tier fee system, a deploy pipeline, SRS v4.0 (BPMN, Sequence, C4, State).
-- **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — ML in finance: strategy backtesting, feature engineering (EMA, RSI, MACD), classification, time-series forecasting (LSTM, TFT).
+- **[ML_Fin_Notebooks](https://github.com/MatveiV/ML_Fin_Notebooks)** — quantitative algotrading research: the original course notebooks `HW1`–`HW5` plus a revised `HW6`–`HW8` section, committed with the executed output in two languages (EN + Russian versions). `HW6` — ARIMA/ETS/state-space against zero-parameter benchmarks (constant and random walk), a Diebold–Mariano test and interval calibration; `HW7` — validation discipline: purged K-fold, walk-forward, CPCV with embargo, an automatic look-ahead feature detector, block-bootstrap intervals, PSR/DSR/MinTRL; `HW8` — LightGBM/XGBoost/CatBoost/HGB/logistic regression on one protocol with an MLflow leaderboard rebuilt from the SQLite store. Shared `mlfin_core.py` with **70 pytest tests** on its invariants; the data is pinned by a `data/SPY.csv` snapshot and a `DATA_END` constant, so every figure reproduces on a re-run. The result is honestly negative — **0 / 6** fitted models significantly beat the constant and **0 / 5** models beat buying the index. **Stack:** pandas, scikit-learn, statsmodels, LightGBM, XGBoost, CatBoost, MLflow, yfinance, nbclient, pytest.
 
 ### Infrastructure & Backend
 
@@ -70,7 +70,7 @@ Multi-provider AI architecture design, FSM configurator development, RAG pipelin
 - A full port of a Flask service to Go: 20x more concurrent requests with a 10 MB image vs. 150 MB.
 - Analyst-Architect-AI — a full-fledged AI-analyst platform: **160 automated tests**, a full **E2E run on a local LLM** (Ollama `qwen2.5:7b` — 10 specs reviewed, 10 knowledge-base questions answered with sources), 2 critical bugs found and fixed (Ollama JSON mode, timeouts), and demo scripts plus a complete documentation set.
 - Orders CRM and TradingRobotMarketplace — taken to production / SRS v4.0.
-- A set of ML strategies for financial time series with confirmed results on historical data.
+- ML_Fin_Notebooks — quantitative algotrading research: zero-parameter benchmarks, a final OOS window touched exactly once, every claimed edge reported with an uncertainty interval; 6 executed notebooks (EN/RU), 70 pytest tests, a reproducible SPY data snapshot.
 
 ### 04.2025 — 11.2025 · Techcoredev.ru (JSC "Innovative Technologies") · Systems Analyst
 
@@ -130,9 +130,9 @@ Multi-provider AI architecture design, FSM configurator development, RAG pipelin
 | ------------------- | ----- |
 | Languages            | Python 3.10+, Go 1.22, TypeScript, SQL, Java, Bash, MQL, TeX |
 | AI / LLM             | OpenAI API, Claude, Gemini, DeepSeek, GLM, Llama, Qwen, Kimi; function/tool calling; MCP; prompt engineering; RAG; FAISS, sentence-transformers; local model serving (Ollama) |
-| Frameworks / UI      | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Nginx |
-| Data / API           | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, Google Sheets API, Google Drive API |
-| ML                   | scikit-learn, LightGBM, PyTorch, PyTorch Lightning, optuna, backtesting |
+| Frameworks / UI      | FastAPI, Flask, React 18/19, Vite, Tailwind CSS, aiogram 3, LangChain, Haystack 2, openai SDK, ChromaDB, Pinecone, SQLAlchemy (async), Alembic, Pydantic v2, pytest, Jupyter (nbclient), Nginx |
+| Data / API           | SQLite, PostgreSQL, Oracle, MS SQL Server, 1C, pandas, yfinance, Google Sheets API, Google Drive API |
+| ML                   | scikit-learn, LightGBM, XGBoost, CatBoost, statsmodels, MLflow, PyTorch, PyTorch Lightning, optuna, backtesting |
 | Infrastructure       | Docker, Docker Compose, Grafana Loki, GitHub Actions |
 | BA / SA tools        | Confluence, JIRA, Redmine, Polarion, DOORS, ARIS, Bizagi, Enterprise Architect, PlantUML, Draw.io, Miro, Figma, Visio, PowerDesigner, DBeaver, Postman, Mermaid (C4, BPMN, UML), Kroki |
 | Trading platforms    | Tastytrade, MetaTrader 4/5, DealBook 360, ThinkOrSwim, VT Trader, QUIK, Tradingview |
