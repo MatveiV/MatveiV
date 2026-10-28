@@ -154,7 +154,7 @@ Multi-provider AI architecture design, FSM configurator development, RAG pipelin
 
 ## Certificates & Training
 
-- 2026 — "First AI Service for Business" intensive course
+- 2026 — "First AI Service for Business" intensive course (Zerocoder University)
 - 2026 — "Vibe-Coding Profession" course (Zerocoder University)
 - 2026 — "Prompt Engineering Intensive" course (Zerocoder University)
 - 2025 — "AI-Assistant Chatbot Development" course (Zerocoder University)
